@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { ClubComponent } from './club/club.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SponsorComponent } from './sponsor/sponsor.component';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    SponsorComponent
+    SponsorComponent,
+    ClubComponent
   ],
   imports: [
     BrowserModule,

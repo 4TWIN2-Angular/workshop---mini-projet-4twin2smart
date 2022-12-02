@@ -15,7 +15,7 @@ import { SponsorComponent } from './sponsor/sponsor.component';
     HeaderComponent,
     FooterComponent,
     SponsorComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule

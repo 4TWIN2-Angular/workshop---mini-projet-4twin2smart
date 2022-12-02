@@ -1,3 +1,4 @@
+import { SponsorComponent } from './sponsor/sponsor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   {path:'listmembres',component:TablemembreComponent,},
   {path:'add',component:AddmembreComponent},
-  
+  {path:'sponsor',   loadChildren: () => import('./sponsor/sponsor.module').then(m => m.SponsorModule)
+}
 ];
 
 @NgModule({

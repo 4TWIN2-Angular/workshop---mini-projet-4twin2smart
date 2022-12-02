@@ -12,7 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
-
+import { SponsorComponent } from './sponsor/sponsor.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,9 @@ import { PipemembrePipe } from './membre/pipemembre.pipe';
     TablemembreComponent,
     AddmembreComponent,
     PipemembrePipe,
-
+    SponsorComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

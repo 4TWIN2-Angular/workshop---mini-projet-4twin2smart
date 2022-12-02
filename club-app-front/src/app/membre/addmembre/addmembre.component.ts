@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
 
@@ -13,6 +14,8 @@ export class AddmembreComponent implements OnInit {
     role1:String;
     nomdeclubs:String[];
     clubassignedto:String;
+    testini=true;
+    @ViewChild('houaform') houaform ;
    
   constructor(private membres:MembreserviceService) { }
 
@@ -41,6 +44,15 @@ export class AddmembreComponent implements OnInit {
    this.membre=new membre();
    this.role1="";
    this.clubassignedto="";
+ 
+  }
+  checkmembreclub(club:String){
+    if (club==null){
+      return false
+    }
+    else{
+      return true;
+    }
   }
 
 }

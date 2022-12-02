@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
+import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { PipemembrePipe } from './membre/pipemembre.pipe';
     TablemembreComponent,
     AddmembreComponent,
     PipemembrePipe,
+    DeletemodalComponent,
 
   ],
   imports: [

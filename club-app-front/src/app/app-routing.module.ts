@@ -5,7 +5,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  {path:'sponsor', component:SponsorComponent}
+  {path:'sponsor',   loadChildren: () => import('./sponsor/sponsor.module').then(m => m.SponsorModule)
+}
 
 ];
 

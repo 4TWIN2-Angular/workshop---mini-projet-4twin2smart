@@ -88,7 +88,7 @@
 <div class="card border-0 shadow mb-4">
     <div class="card-body">
        <div class="table-responsive">
-          <table class="table table-centered table-nowrap mb-0 rounded" >
+          <table class="table table-centered table-nowrap mb-0 rounded table-responsive"  #tablemchhoua>
              <thead class="thead-light">
                 <tr >
                    <th class="border-0 rounded-start">#</th>
@@ -106,7 +106,7 @@
              <tbody>
                
                  <tr *ngFor="let membre of listmembres|pipemembre:lawej;let i = index">
-                    <td class="py-2">{{i}}</td>
+                    <td class="py-2">{{i+1}}</td>
                     <td >
                        
                         <div class="py-2">{{membre.nom_M}}</div>
@@ -124,14 +124,14 @@
                        
                     </td>
                    
-                    <td class="text-success">
+                    <td  [ngStyle]="{color:getcolormembre(membre.role)}">
                      <div class="d-flex align-items-center">
-                              <div class=" fw-bold py-2"> {{membre.role}}</div>
+                              <div class=" fw-bold py-2" > {{membre.role}}</div>
                         
                      </div>
                   </td>
                     <td>
-                     <button class="btn  btn-outline-danger" type="button" [routerLink]="['/listmembres/deletemembre']" >Delete</button> 
+                     <button class="btn btn-outline-danger" type="button" [routerLink]="['/listmembres/delete/',membre.id_M]" (click)="deletemembre(membre.id_M)">Delete</button> 
                        
                     </td>
                  </tr>
@@ -143,5 +143,3 @@
        </div>
     </div>
  </div>
-<hr>
-<i class='fa-solid fa-crown' style='color: #f3da35'></i>

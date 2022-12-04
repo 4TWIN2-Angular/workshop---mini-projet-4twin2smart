@@ -8,11 +8,8 @@ import { TablemembreComponent } from './membre/tablemembre/tablemembre.component
 import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  {path:'listmembres',component:TablemembreComponent,children:[
-    {path:'delete',component:DeletemodalComponent}
-  ]},
-  {path:'add',component:AddmembreComponent},
+  {path:'',component:DashboardComponent},
+ {path:'membre',loadChildren:()=>import('./membre/membre.module').then(m=>m.MembreModule)},
   {path:'sponsor',   loadChildren: () => import('./sponsor/sponsor.module').then(m => m.SponsorModule)
 }
 ];

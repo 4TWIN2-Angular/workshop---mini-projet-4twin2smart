@@ -1,23 +1,130 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="col-lg-4">
+  <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true" data-bs-backdrop="static">
+     <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+           <div class="modal-body p-0">
+              <div class="card p-3 p-lg-4">
+                 <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close" (click)="resetini()"></button>
+                 <div class="text-center text-md-center mb-4 mt-md-0">
+                    <h1 class="mb-0 h4">Modifier coordonnés</h1>
+                 </div>
+                 <form action="#" class="mt-4" >
+                    <div class="form-group mb-4">
+                     <div><label for="first_name">Prénom</label> <input class="form-control "   [ngClass]="{'is-valid':prenommembre.valid===true,'is-invalid':prenommembre.invalid&&prenommembre.dirty===true}"  type="text" placeholder="Enter your first name" name="prenom_M"  required  minlength="3" pattern="[a-zA-Z]*" [(ngModel)]="membre.prenom_M" #prenommembre="ngModel">
+                        <!--  <div *ngIf="prenommembre.valid" class="valid-feedback">Looks good!</div>-->
+                          <div *ngIf="prenommembre.invalid && prenommembre.touched">
+                             <div *ngIf="prenommembre.errors['required']" style="color:red">
+                                ce champ est obligatoire!
+                             </div>
+                             <div *ngIf="prenommembre.errors['pattern']" style="color:red">
+                              votre nom contient des chiffres ou des caractéres speciaux!
+                             </div>
+                             <div *ngIf="prenommembre.errors['minlength']" style="color:red">
+                                minimum  de caractéres saisies {{prenommembre.errors['minlength'].requiredLength}},vous avez tapez : {{prenommembre.errors['minlength'].actualLength}} caractéres
+                               
+     
+                             </div>
+                             
+                          </div>
+                          <div *ngIf="prenommembre.valid" style="color:limegreen">
+                                Cela somble bien !
+                          </div>
+                          <div >
+                             
+                          </div>
+                        
+                       </div>
+                    </div>
+                    
+                       <div class="form-group mb-4">
+                        <div><label for="last_name">Nom</label> <input class="form-control"  type="text" placeholder="Also your last name"  name="nom_M" [(ngModel)]="membre.nom_M" [ngClass]="{'is-valid':nommembre.valid===true,'is-invalid':nommembre.invalid&&nommembre.dirty===true}" #nommembre="ngModel" required minlength="3" pattern="[a-zA-Z]*"></div>
+                        <div *ngIf="nommembre.invalid && nommembre.touched">
+                       <div *ngIf="nommembre.errors['required']" style="color:red">
+                          ce champ est obligatoire!
+                       </div>
+                       <div *ngIf="nommembre.errors['pattern']" style="color:red">
+                        votre nom contient des chiffres ou des caractéres speciaux!
+                       </div>
+                       <div *ngIf="nommembre.errors['minlength']" style="color:red">
+                          minimum  de caractéres saisies {{nommembre.errors['minlength'].requiredLength}},vous avez tapez : {{nommembre.errors['minlength'].actualLength}} caractéres
+                         
+
+                       </div>
+                       
+                    </div>
+                    <div *ngIf="nommembre.valid" style="color:limegreen">
+                          Cela somble bien !
+                    </div>
+                       </div>
+
+                       <div class="form-group mb-4">
+                        <div class="form-group"><label for="email">Email</label> <input class="form-control"  type="email" placeholder="name@mail.com" name="email" [(ngModel)]="membre.email" pattern="^[a-zA-Z0-9._-]+@gmail.com" required #emailmembre="ngModel" [ngClass]="{'is-valid':emailmembre.valid===true,'is-invalid':emailmembre.invalid&&emailmembre.dirty===true}"   > </div>
+                   <div *ngIf="emailmembre.invalid && emailmembre.touched">
+                     <div *ngIf="emailmembre.errors['required']" style="color:red">
+                        ce champ est obligatoire!
+                     </div>
+                     <div *ngIf="emailmembre.errors['pattern']" style="color:red">
+                        ce mail est invalid !
+                       </div>
+                     
+                     
+                       
+                     
+                  </div>
+                  <div *ngIf="emailmembre.valid" style="color:limegreen">
+                        Cela somble bien !
+                  </div>
+                     </div>
+                     <div class="form-group mb-4">
+                        <div class="form-group"><label for="phone">Numero de telephone</label> <input class="form-control" id="phone" type="tel" placeholder="+216 12345678" name="num_M"[(ngModel)]="membre.num_M" required required #numtelmembre="ngModel" [ngClass]="{'is-valid':numtelmembre.valid===true,'is-invalid':numtelmembre.invalid&&numtelmembre.dirty===true}" pattern="[2]{1}[0-9]{1}[0-9]{6}|[9]{1}[0-9]{1}[0-9]{6}|[5]{1}[0-9]{1}[0-9]{6}"></div>
+                        <div *ngIf="numtelmembre.invalid && numtelmembre.touched">
+                          <div *ngIf="numtelmembre.errors['required']" style="color:red">
+                             ce champ est obligatoire!
+                          </div>
+                          <div *ngIf="numtelmembre.errors['pattern']" style="color:red">
+                             ce numero est invalid !
+                            </div>
+                          
+                          
+                            
+                          
+                       </div>
+                       <div *ngIf="numtelmembre.valid" style="color:limegreen">
+                             Cela somble bien !
+                       </div>
+                   </div>
+                   <div class="form-group mb-4">
+                     <label for="state">Club</label> 
+                     <select class="form-select w-100 mb-0" id="state" name="state" aria-label="State select example"  #role2 (change)="selectclub(role2.value)" required >
+                       <option   disabled="disabled" >Choisir Club</option>
+                          
+                       <option *ngFor="let nomclub123 of nomdeclubs">
+                          {{nomclub123}}
+                      </option>
+     
+                     
+                     </select>
+                    
+
+                   </div>
+                   <div class="form-group mb-4">
+                     <label for="state">Position dans le Club</label> 
+                     <select class="form-select w-100 mb-0" id="state" name="state" aria-label="State select example" #role (change)="selectit(role.value)" required>
+                        <option  >Choisr role</option>
+                        <option >President</option>
+                        <option >Staff</option>
+                        <option selected="selected" >Membre</option>
+                        
+                     </select>
+                 </div>
+                      
+                    
+                    <div class="d-grid"><button type="submit" class="btn btn-gray-800" (click)="heznilmembre();savemembre()" data-bs-dismiss="modal">Sign in</button></div>
+                 </form>
+                
+              </div>
+           </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
-      </div>
-    </div>
+     </div>
   </div>
+</div>

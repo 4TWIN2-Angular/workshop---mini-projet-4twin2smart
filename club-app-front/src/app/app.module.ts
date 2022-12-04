@@ -13,6 +13,7 @@ import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SponsorComponent } from './sponsor/sponsor.component';
     TablemembreComponent,
     AddmembreComponent,
     PipemembrePipe,
-    SponsorComponent
+    SponsorComponent,
+    DeletemodalComponent
   ],
 
   imports: [

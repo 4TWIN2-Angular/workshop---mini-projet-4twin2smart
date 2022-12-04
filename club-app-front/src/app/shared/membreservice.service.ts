@@ -27,5 +27,7 @@ export class MembreserviceService {
   deletemembre(id:number):Observable<String>{
     return this.httpmembre.delete<String>(this.membreurl+id)
   }
-
+updatemembre(membre:membre,id:number){
+  this.httpmembre.put(this.membreurl+'edit'+'/'+id,membre)
+}
 }

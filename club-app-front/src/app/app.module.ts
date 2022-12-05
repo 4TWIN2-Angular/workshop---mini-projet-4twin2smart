@@ -10,7 +10,7 @@ import { MembreComponent } from './membre/membre.component';
 import { TablemembreComponent } from './membre/tablemembre/tablemembre.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component';
@@ -33,7 +33,8 @@ import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

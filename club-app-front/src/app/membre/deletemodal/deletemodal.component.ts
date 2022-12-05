@@ -11,10 +11,14 @@ import { MembreserviceService } from 'src/app/shared/membreservice.service';
 })
 export class DeletemodalComponent implements OnInit {
   membre=new membre();
-  role1:String;
+ 
   nomdeclubs:String[];
-  clubassignedto:String
-
+  clubassignedto:String;
+  hia:String
+  jarebni(){
+    console.log(this.membre)
+    console.log(this.clubassignedto)
+  }
 resetini(){
   window.location.reload()
 }
@@ -37,24 +41,20 @@ resetini(){
   addmemb(){
     console.log(this.membre)
   }
-  selectit(role :String){
-    this.role1=role;
-    console.log(this.role1)
-}
-selectclub(club:String){
-  this.clubassignedto=club;
-  console.log(this.clubassignedto)
-}
+ 
+
+
 savemembre(){
     
-  this.membre.role=this.role1
+ 
   console.log(this.membre);
   this.members.addmembre(this.membre,this.clubassignedto).subscribe(data=>{console.log(data)
   }
 
   )
+  
  this.membre=new membre();
- this.role1="";
+ 
  this.clubassignedto="";
  
  

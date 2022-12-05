@@ -8,7 +8,7 @@
                  <div class="text-center text-md-center mb-4 mt-md-0">
                     <h1 class="mb-0 h4">Modifier coordonnés</h1>
                  </div>
-                 <form action="#" class="mt-4" >
+                 <form action="#" class="mt-4"  #heroForm="ngForm">
                     <div class="form-group mb-4">
                      <div><label for="first_name">Prénom</label> <input class="form-control "   [ngClass]="{'is-valid':prenommembre.valid===true,'is-invalid':prenommembre.invalid&&prenommembre.dirty===true}"  type="text" placeholder="Enter your first name" name="prenom_M"  required  minlength="3" pattern="[a-zA-Z]*" [(ngModel)]="membre.prenom_M" #prenommembre="ngModel">
                         <!--  <div *ngIf="prenommembre.valid" class="valid-feedback">Looks good!</div>-->
@@ -95,10 +95,10 @@
                    </div>
                    <div class="form-group mb-4">
                      <label for="state">Club</label> 
-                     <select class="form-select w-100 mb-0" id="state" name="state" aria-label="State select example"  #role2 (change)="selectclub(role2.value)" required >
-                       <option   disabled="disabled" >Choisir Club</option>
+                     <select class="form-select w-100 mb-0" id="clubname" name="clubname" aria-label="State select example"   required [(ngModel)]="clubassignedto">
+                       <option   disabled="disabled"  [value]="null">Choisir Club</option>
                           
-                       <option *ngFor="let nomclub123 of nomdeclubs">
+                       <option *ngFor="let nomclub123 of nomdeclubs" [value]="nomclub123">
                           {{nomclub123}}
                       </option>
      
@@ -109,18 +109,18 @@
                    </div>
                    <div class="form-group mb-4">
                      <label for="state">Position dans le Club</label> 
-                     <select class="form-select w-100 mb-0" id="state" name="state" aria-label="State select example" #role (change)="selectit(role.value)" required>
-                        <option  >Choisr role</option>
-                        <option >President</option>
-                        <option >Staff</option>
-                        <option selected="selected" >Membre</option>
+                     <select class="form-select w-100 mb-0" id="rolemembre" name="rolemembre" aria-label="State select example" required [(ngModel)]="membre.role">
+                        <option  disabled="disabled" [value]="null">Choisr role</option>
+                        <option value="President">President</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Membre">Membre</option>
                         
                      </select>
                  </div>
                       
                     
-                    <div class="d-grid"><button type="submit" class="btn btn-gray-800" (click)="heznilmembre();savemembre()" data-bs-dismiss="modal">Sign in</button></div>
-                 </form>
+                    <div class="d-grid"><button type="submit" class="btn btn-gray-800" (click)="heznilmembre();savemembre()" data-bs-dismiss="modal" [disabled]="heroForm.invalid">Sign in</button></div>
+                     </form>
                 
               </div>
            </div>

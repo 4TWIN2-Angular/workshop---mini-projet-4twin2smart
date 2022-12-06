@@ -13,6 +13,9 @@ import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { UniversityComponent } from './university/university.component';
+import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
+import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { SponsorComponent } from './sponsor/sponsor.component';
     TablemembreComponent,
     AddmembreComponent,
     PipemembrePipe,
-    SponsorComponent
+    SponsorComponent,
+    UniversityComponent,
+    AddUniversityComponent,
+    UpdateUniversityComponent
   ],
 
   imports: [

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 @Component({
   selector: 'app-tablemembre',
   templateUrl: './tablemembre.component.html',
@@ -31,12 +31,37 @@ export class TablemembreComponent implements OnInit {
       return '#2ab7ca'
       else return '#0057e7'
   }
-  
+  deletemembre1(id:number){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          
+          'Deleted!',
+        'Your file has been deleted.',
+          'success',
+          setTimeout(() => {
+            this.deletemembre(id),
+          window.location.reload()
+          }, 3000),
+          
+        )
+      }
+    })
+  }
   deletemembre(id:number){
     console.log(id);
-      this.membreservice.deletemembre(id).subscribe(data=>console.log(data))
+      this.membreservice.deletemembre(id).subscribe(data=>{console.log(data)
+      })
    
-     window.location.reload()
+     
 
   }
 

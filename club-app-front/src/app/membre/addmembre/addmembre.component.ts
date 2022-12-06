@@ -3,6 +3,14 @@ import { FormControl, FormControlName, FormGroup, NgForm } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router';
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+
+
+
+
+
+
 
  
 
@@ -70,11 +78,15 @@ export class AddmembreComponent implements OnInit {
     this.membre2.role=  this.updatemembre.get('role').value;
     this.membre2.club=this.membre.club
     this.membres.updatemembre(this.membre2).subscribe(data=>{})
-    
+   
    // this.updatemembre.reset();
-    
- 
-  }
+   
+   Swal.fire({
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+  })
   
-
+   }
 }

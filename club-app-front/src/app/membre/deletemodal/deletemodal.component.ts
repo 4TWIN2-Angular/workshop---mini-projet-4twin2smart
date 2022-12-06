@@ -1,9 +1,10 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Inject, Injector, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+
 
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-deletemodal',
   templateUrl: './deletemodal.component.html',
@@ -22,7 +23,8 @@ export class DeletemodalComponent implements OnInit {
 resetini(){
   window.location.reload()
 }
-  constructor(private members:MembreserviceService,private rout:Router) {
+  
+constructor(private members:MembreserviceService,private rout:Router) {
     
    }
   
@@ -42,13 +44,28 @@ resetini(){
     console.log(this.membre)
   }
  
-
+savemembre1(){
+  
+  Swal.fire(
+          
+    'Done!',
+  'Membre est ajotuée !',
+    'success',
+    setTimeout(() => {
+      this.savemembre(),
+    window.location.reload()
+    }, 3000),
+    
+  )
+}
 
 savemembre(){
     
  
   console.log(this.membre);
   this.members.addmembre(this.membre,this.clubassignedto).subscribe(data=>{console.log(data)
+    
+  
   }
 
   )
@@ -57,10 +74,21 @@ savemembre(){
  
  this.clubassignedto="";
  
- 
  window.close()
 
  window.location.reload()
 
 }
+// j(){
+//   this.tostr.success('adding membre is done!','Added',{
+//     disableTimeOut:false,
+//     timeOut: 3000,
+//     positionClass:'toast-top-full-width',
+//     progressBar:true,
+//     progressAnimation:'decreasing'
+  
+  
+//   });
+
+// }
 }

@@ -1,6 +1,6 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MembreRoutingModule } from './membre-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,7 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     MembreRoutingModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    
+   
+    
   ]
 })
 export class MembreModule { }

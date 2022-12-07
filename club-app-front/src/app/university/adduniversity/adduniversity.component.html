@@ -1,3 +1,108 @@
+<!-- <div class="py-4">
+   <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+      <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+         <li class="breadcrumb-item">
+            <a href="#">
+               <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+               </svg>
+            </a>
+         </li>
+         <li class="breadcrumb-item"><a href="#">sponsor</a></li>
+         <li class="breadcrumb-item active" aria-current="page">ajouter sponsor</li>
+      </ol>
+   </nav>
+   <div class="d-flex justify-content-between w-100 flex-wrap">
+      <div class="mb-3 mb-lg-0">
+         <h1 class="h4">Sponsor</h1>
+      </div>
+   </div>
+</div>
+<div >
+  <form [formGroup ]="myForm" (ngSubmit)="saveUniversity()" >
+     <div class="form-group">
+        <label for="nom">University Name</label>
+        <input type="text" formControlName="nom" class="form-control" id="UnivName" placeholder="Enter nom de l'université ">
+      </div>
+      <div *ngIf="myForm.get('UnivName').invalid && myForm.get('UnivName').touched">
+        <div *ngIf="myForm.get('UnivName').errors['required']" class="alert alert-danger" role="alert">
+          Ce champ est  Obligatoire !
+        </div>
+        <div *ngIf="myForm.get('UnivName').errors['minlength']" class="alert alert-danger" role="alert">
+         test
+       </div>
+       <div *ngIf="myForm.get('UnivName').errors['pattern']" class="alert alert-danger" role="alert">
+          tous des lettres
+       </div>
+       </div>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="emailUniv" formControlName="emailUniv"  class="form-control" id="emailUniv" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        
+        </div>
+        <div *ngIf="myForm.get('emailUniv').invalid && myForm.get('emailUniv').touched">
+           <div *ngIf="myForm.get('emailUniv').errors['required']" class="alert alert-danger" role="alert">
+             Email est Obligatoire !
+           </div>
+          <div *ngIf="myForm.get('emailUniv').errors['pattern']" class="alert alert-danger" role="alert">
+            la forme de votre email doit etre "xxxxx@gmail.com"
+          </div>
+          </div>
+
+          <div class="mb-4">
+           <label class="my-1 me-2" for="categorieUniv">Categorie</label> 
+           <select class="form-select" id="categorieUniv" aria-label="Default select example">
+              <option selected="selected">Etatique</option>
+              <option value="1">Privé</option>
+              <option value="2">...</option>
+           </select>
+        </div>
+        <div *ngIf="myForm.get('categorieUniv').invalid && myForm.get('categorieUniv').touched">
+           <div *ngIf="myForm.get('categorieUniv').errors['required']" class="alert alert-danger" role="alert">
+             categorie est Obligatoire !
+           </div>
+          </div>
+              <div class="mb-3">
+                     <label for="PhoneUniv">Numéro téléphone</label>
+                     <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">
+                           <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                           </svg>
+                        </span>
+                        <input type="text" class="form-control" formControlName="PhoneUniv"  id="PhoneUniv" placeholder="phone Number" aria-label="PhoneUniv">
+                     </div>
+               </div>
+               <div *ngIf="myForm.get('PhoneUniv').invalid && myForm.get('PhoneUniv').touched">
+                 <div *ngIf="myForm.get('PhoneUniv').errors['required']" class="alert alert-danger" role="alert">
+                   Numéro téléphone est Obligatoire !
+                 </div>
+                 <div *ngIf="myForm.get('PhoneUniv').errors['minLength']" class="alert alert-danger" role="alert">
+                    le numéro de téléphone doit étre 8 numéro
+
+                 </div>
+                    <div *ngIf="myForm.get('PhoneUniv').errors['maxLength']" class="alert alert-danger" role="alert" >
+                       le numéro de téléphone doit étre 8 numéro
+
+                    </div>
+                 
+                 
+                 <div *ngIf="myForm.get('PhoneUniv').errors['pattern']" class="alert alert-danger" role="alert">
+                    le numéro de téléphone doit étre 8 numéro
+                  </div>
+                 
+                </div>
+        <button type="submit"  class="btn btn-primary">Submit</button>
+
+
+  </form>
+
+</div> -->
+
+
+
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
    <div>
       <div class="dropdown">
@@ -90,105 +195,81 @@
       </div>
    </div>
 </div>
-
-
-
-
 <div class="row">
    <div class="col-12 col-xl-8">
       <div class="card card-body border-0 shadow mb-4">
-         <h2 class="h5 mb-4">Ajouter une university</h2>
-         <form [formGroup ] ="myForm" (ngSubmit)="saveUniversity()" >
+         <h2 class="h5 mb-4">Ajouter un membre</h2>
+         <form class="form-group" (ngSubmit)="saveUniversity()" >
             <div class="row">
                <div class="col-md-6 mb-3">
-                   <div><label for="UnivId">Identifiant du l'université</label> 
-                     <input class="form-control"  type="text" placeholder="ID of university"  name="UnivId" formControlName="UnivId" required="" ></div>
-                </div>
-               <div class="col-md-6 mb-3">
-                  <div><label for="UnivName">Nom de l'université </label> 
-                     <input class="form-control"  type="text" placeholder="Enter the name of yhe university" name="UnivName"  ></div>
-               </div>
+                  <div><label for="UnivId"> ID de l'université </label> 
+                     <input class="form-control"  type="text" placeholder="Enter your the id of your university" name="UnivId"></div>
+                  </div>
+                  <!-- <div *ngIf="UnivName.invalid && UnivName-touched">
+                     <div *ngIf="UnivName.errors?[required]" style="color:red"></div>
+                  </div> -->
 
-               <div class="alert alert-danger" *ngIf="myForm.get('UnivName').hasError && myForm.get('UnivName').touched">
-                   <div *ngIf="myForm.get('UnivName').errors['required']" class="alert alert-danger" role="alert">
-                     Nom Obligatoire !
-                   </div>
-                   <div *ngIf="myForm.get('UnivName').errors['minlength']" class="alert alert-danger" role="alert">
-                    test
-                  </div>
-                  <div *ngIf="myForm.get('UnivName').errors['pattern']" class="alert alert-danger" role="alert">
-                     tous des lettres
-                  </div>
-              
-            </div>
-            <div class="col-md-6 mb-3">
-               <div class="form-group"><label for="AdressUniv">Adress of university </label> 
-                  <input class="form-control" id="AdressUniv" type="text" placeholder="7 rue des Fleurs 4180 Tours" name="AdressUniv" ></div>
+
+               <div class="col-md-6 mb-3">
+                  <div><label for="UnivName"> Nom de l'universite </label> <input class="form-control"  type="text" placeholder="university name"  name="UnivName" ></div>
+               </div>
             </div>
             
-            <div class="mb-3">
-               <label for="PhoneUniv">Numéro téléphone</label>
-               <div class="input-group">
-                  <span class="input-group-text" id="basic-addon1">
-                     <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                     </svg>
-                  </span>
-                  <input type="text" class="form-control" formControlName="PhoneUniv"  id="PhoneUniv" placeholder="phone Number" aria-label="PhoneUniv" >
-               </div>
-         </div>
-         <div *ngIf="myForm.get('PhoneUniv').invalid && myForm.get('PhoneUniv').touched">
-           <div *ngIf="myForm.get('PhoneUniv').errors['required']" class="alert alert-danger" role="alert">
-             Numéro téléphone est Obligatoire !
-           </div>
-           <div *ngIf="myForm.get('PhoneUniv').errors['minLength']" class="alert alert-danger" role="alert">
-              le numéro de téléphone se compose de 8 numéro au minimum
-
-           </div>
-              <div *ngIf="myForm.get('PhoneUniv').errors['maxLength']" class="alert alert-danger" role="alert" >
-                 le numéro de téléphone se compose de 8 numéro au maximum
-
-              </div>
-           
-           
-           <div *ngIf="myForm.get('PhoneUniv').errors['pattern']" class="alert alert-danger" role="alert">
-              le numéro de téléphone se compose que de numéro
-            </div>
-           
-          </div>
            
 
                <div class="col-md-6 mb-3">
                   <div class="form-group"><label for="emailUniv">Email</label> 
-                     <input class="form-control"  type="email" placeholder="nameUniversity@gmail.com" name="emailUniv" ></div>
-                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-               
+                     <input class="form-control"  type="emailUniv" placeholder="Universityname@gmail.com" name="emailUniv" ></div>
+               </div>
+               <div *ngIf="myForm.get('emailUniv').invalid && myForm.get('emailUniv').touched">
+                  <div *ngIf="myForm.get('emailUniv').errors['required']" class="alert alert-danger" role="alert">
+                    Email est Obligatoire !
+                  </div>
+                 <div *ngIf="myForm.get('emailUniv').errors['pattern']" class="alert alert-danger" role="alert">
+                   la forme de votre email doit etre "xxxxx@gmail.com"
+                 </div>
                  </div>
 
-                 <div *ngIf="myForm.get('emailUniv').invalid && myForm.get('emailUniv').touched">
-                    <div *ngIf="myForm.get('emailUniv').errors['required']" class="alert alert-danger" role="alert">
-                      Email est Obligatoire !
-                    </div>
-                   <div *ngIf="myForm.get('emailUniv').errors['pattern']" class="alert alert-danger" role="alert">
-                     la forme de votre email doit etre "nameUniversity@gmail.com"
-                   </div>
-                   </div>
+               <div class="col-md-6 mb-3">
+                  <div class="form-group"><label for="PhoneUniv">Numero de telephone</label>
+                      <input class="form-control" id="PhoneUniv" type="number" placeholder="+216 71453624 " name="PhoneUniv" ></div>
+               </div>
+               <div *ngIf="myForm.get('PhoneUniv').errors['minLength']" class="alert alert-danger" role="alert">
+                  le numéro de téléphone doit étre 8 numéro
 
+               </div>
+                  <div *ngIf="myForm.get('PhoneUniv').errors['maxLength']" class="alert alert-danger" role="alert" >
+                     le numéro de téléphone doit étre 8 numéro
 
-            <div class="col-sm-4 mb-3">
-              <label for="state">Type de university</label> 
-              <select class="form-select w-100 mb-0" id="state" name="state" aria-label="State select example" #role (change)="selected(role.value)">
-                 <option selected="selected">Type</option>
-                 <option >Etatique</option>
-                 <option >Privé</option>
-              </select>
-           </div>
-
+                  </div>
+               
+               
+               <div *ngIf="myForm.get('PhoneUniv').errors['pattern']" class="alert alert-danger" role="alert">
+                  le numéro de téléphone doit étre 8 numéro
+                </div>
+           
+              
+               <div class="col-sm-4 mb-3">
+                  <label class="my-1 me-2" for="categorieUniv">Categorie</label> 
+                  <select class="form-select" id="categorieUniv" aria-label="Default select example">
+                     <option selected="selected">Etatique</option>
+                     <option value="1">Privé</option>
+                     <option value="2">...</option>
+                  </select>
+               </div>
+               <div *ngIf="myForm.get('categorieUniv').invalid && myForm.get('categorieUniv').touched">
+                  <div *ngIf="myForm.get('categorieUniv').errors['required']" class="alert alert-danger" role="alert">
+                    categorie est Obligatoire !
+                  </div>
+                 </div>
+      
+               </form>
+            </div>  
+           
        
-               <!--University list-->
-                 <!--addUniversity-->
+                 <!--addmembre-->
                  <div class="col-lg-4">
-                    <button type="button" class="btn btn-block btn-gray-800 mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Add</button>
+                    <button type="button" class="btn btn-block btn-gray-800 mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Save</button>
                     <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
                        <div class="modal-dialog modal-dialog-centered" role="document">
                           <div class="modal-content">
@@ -196,30 +277,31 @@
                                 <h2 class="h6 modal-title">Comfirmation</h2>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                              </div>
-                             <div class="modal-body display ">
+                             <!--<div class="modal-body display ">
                                 <p style="font-size: larger;text-align:center">Est ce que vous voulez sauvgarder<p>
-                                <p style="color:green;text-align:center">jfrkj </p>
-        
+                                <p style="color:green;text-align:center">{{university.UnivId}} {{university.UnivName}} </p>
+                                         
+                                   <p style="font-size: larger;text-align:center">et l'assigner a club:</p>
+                                <p style="color:green;text-align: center;">{{clubassignedto}}</p> 
+                                <p style="font-size: larger;text-align:center">avec un role : </p>
+                                <p style="color:green;text-align:center">{{role1}}</p>
                              </div>
-                             <div class="modal-footer"><button type="button" class="btn btn-secondary" (click)="saveUniversity()" data-bs-dismiss="modal">Accept</button> <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button></div>
+                             <div class="modal-footer"><button type="button" class="btn btn-secondary" (click)="savemembre()" data-bs-dismiss="modal">Accept</button> <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button></div>
                           </div>
                        </div>
                     </div>
-                 </div>
-                       
-        </div>
-       </form>
-
-
-
-
-     <div class="card card-body border-0 shadow mb-4 mb-xl-0">
+                 </div>-->
+                 
+                 <!--endadd-->
+       
+     
+      <div class="card card-body border-0 shadow mb-4 mb-xl-0">
          <h2 class="h5 mb-4">Alerts & Notifications</h2>
          <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex align-items-center justify-content-between px-0 border-bottom">
                <div>
                   <h3 class="h6 mb-1">Company News</h3>
-                  <p class="small pe-4">Get Rocket news, announcements, and Universities updates</p>
+                  <p class="small pe-4">Get Rocket news, announcements, and product updates</p>
                </div>
                <div>
                   <div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="user-notification-1"> <label class="form-check-label" for="user-notification-1"></label></div>
@@ -313,5 +395,4 @@
       </div>
    </div>
 </div>
-
 

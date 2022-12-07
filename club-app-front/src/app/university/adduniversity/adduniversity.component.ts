@@ -8,24 +8,33 @@ import { university } from 'src/app/models/university';
   styleUrls: ['./adduniversity.component.css']
 })
 export class AddUniversityComponent implements OnInit {
-  myForm : any ;
+  [x: string]: any;
+  myForm :  FormGroup;
   University =new university();
  
-   constructor(){
+   constructor(){}
  
-   // this.myForm=this.formbuilder.group
-  //  ({
-  //     UnivId : ['', [Validators.required]],
-  //     UnivName : ['',[Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]],
-  //     emailUniv:['',[Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@gmail.com")]],
-  //     PhoneUiv: ['',[Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern("[0-9]*")]],
-  //     categorie:['', [Validators.required]],
-  //     })
-  }
+    // this.myForm=new FormGroup({
+    
+    //   UnivId :  ['', [Validators.required]],
+    //   UnivName :['',[Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]],
+    //   emailUniv:['',[Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@gmail.com")]],
+    //   PhoneUiv: ['',[Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern("[0-9]*")]],
+    //   categorie:['', [Validators.required]],
+    //    })
 
-  ngOnInit(): void {
-  
-  }
+
+     
+       ngOnInit(): void {
+         this.myForm=new FormGroup({
+           
+           UnivId:new FormControl('', [Validators.required]),
+           UnivName :new FormControl('',[Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]), 
+           emailUniv:new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@gmail.com")]),
+           PhoneUniv: new FormControl('',[Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern("[0-9]*")]),
+           categorieUniv:new FormControl('', [Validators.required]),
+           })
+          }
 
   saveUniversity(){
     console.log(this.myForm.get("UnivId").value)

@@ -4,5 +4,6 @@ export class university{
     AdressUniv:String;
     PhoneUniv:String;
     emailUniv:String;
+    categorieUniv: string;
     
     }

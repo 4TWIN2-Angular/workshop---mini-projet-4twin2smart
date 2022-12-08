@@ -1,9 +1,10 @@
 export class Sponsor{
     id: number;
     logo:string;
-    nom: string ;
+    labelle: string ;
     email:string;
-    categorie: string;
+    categorieSponsor: string;
     montant: number;
+    event:any;
     nbrEvent: number;
     }

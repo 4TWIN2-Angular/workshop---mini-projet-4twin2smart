@@ -1,3 +1,4 @@
+import { SponsorService } from './../shared/sponsor.service';
 import { Component, OnInit } from '@angular/core';
 import { Sponsor } from '../models/sponsor';
 @Component({
@@ -7,10 +8,14 @@ import { Sponsor } from '../models/sponsor';
 })
 export class SponsorComponent implements OnInit {
   listSponsor: Sponsor[]=[]
-  constructor() { }
-
+  constructor(private spS:SponsorService) { }
+  getAllSponsors(){
+    this.spS.getallsponsor().subscribe(res=>
+      { this.listSponsor=res
+      });
+  }
   ngOnInit(): void {
-
+this.getAllSponsors();
   }
   
 

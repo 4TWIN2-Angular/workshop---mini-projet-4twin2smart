@@ -38,6 +38,7 @@ save(){
   this.sponsor.email= this.myForm.get('email').value;
   this.sponsor.labelle= this.myForm.get('nom').value;
   this.sponsor.categorieSponsor=this.myForm.get('categorie').value;
+  this.sponsor.phone=this.myForm.get('phone').value;
 this.spS.addsponsor(this.sponsor).subscribe();
 
 this.myForm.reset();

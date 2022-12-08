@@ -6,5 +6,5 @@ export class Sponsor{
     categorieSponsor: string;
     montant: number;
     event:any;
-    nbrEvent: number;
+    phone: string;
     }

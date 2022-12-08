@@ -21,5 +21,7 @@ export class SponsorService {
   addsponsor(sponsor:Sponsor):Observable<Sponsor>{
     return this.httpsponsor.post<Sponsor>(this.sponsorurl+'save',sponsor,this.httpOptions)
 }
-
+deletesponsor(id:number):Observable<String>{
+  return this.httpsponsor.delete<String>(this.sponsorurl+id)
+}
 }

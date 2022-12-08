@@ -1,0 +1,22 @@
+<h2>University list</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>University ID</th>
+            <th>University name</th>
+            <th>University Email Adress</th>
+            <th>University Phone number</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let university of universities">
+            <td> {{university.UnivId}}</td>
+            <td> {{university.UnivName}}</td>
+            <td> {{university.emailUniv}}</td>
+            <td> {{university.PhoneUniv }}</td>
+
+        </tr>
+
+    </tbody>
+</table>

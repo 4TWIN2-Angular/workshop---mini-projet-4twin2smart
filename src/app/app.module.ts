@@ -10,6 +10,10 @@ import { UniversityComponent } from './university/university.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ListUniversityComponent } from './university/list-university/list-university.component';
+import { CreatUniversityComponent } from './university/creat-university/creat-university.component';
+import { UpdateUniversityComponent } from './university/update-university/update-university.component';
+import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
+import { DetailsUniversityComponent } from './university/details-university/details-university.component';
 
 
 @NgModule({
@@ -20,7 +24,11 @@ import { ListUniversityComponent } from './university/list-university/list-unive
     FooterComponent,
     AddUniversityComponent,
     UniversityComponent,
-    ListUniversityComponent
+    ListUniversityComponent,
+    CreatUniversityComponent,
+    UpdateUniversityComponent,
+    DeletUniversityComponent,
+    DetailsUniversityComponent
   ],
   imports: [
     BrowserModule,

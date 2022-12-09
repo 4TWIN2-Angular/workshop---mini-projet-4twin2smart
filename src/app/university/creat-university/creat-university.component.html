@@ -1,0 +1,34 @@
+
+<div class="col-md-6 offset-md-3">
+<h3> Creat University </h3>
+<form   >
+    
+
+    <div class="form-group">
+        <label>Name of the University</label>
+        <input type="text" class="form-control" id="UnivName"
+         [(ngModel)]= "university.UnivName"  name=" UnivName">
+    </div>
+
+    <div class="form-group">
+        <label>Adress of the University</label>
+        <input type="text" class="form-control" id="AdressUniv"
+         [(ngModel)]= "university.AdressUniv"  name=" AdressUniv">
+    </div>
+
+    <div class="form-group">
+        <label>Phone number of the University</label>
+        <input type="text" class="form-control" id="PhoneUniv"
+         [(ngModel)]= "university.PhoneUniv"  name=" PhoneUniv">
+    </div>
+
+    <div class="form-group">
+        <label>Email of the University</label>
+        <input type="text" class="form-control" id="emailUniv"
+         [(ngModel)]= "university.emailUniv"  name=" emailUniv">
+    </div>
+
+    <br>
+
+    <button type="button" (click)="saveUniversiy()" class="btn btn-block btn-gray-800 mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Save</button>
+</form> 

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators, FormsModule, NgModel   } from '@angular/forms';
-import { UniversityServiceService } from 'src/app/shared/university-service.service'; 
 
+import { UniversityServiceService } from 'src/app/shared/university-service.service'; 
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators, FormsModule, NgModel   } from '@angular/forms';
 import { university } from 'src/app/models/University';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-university',

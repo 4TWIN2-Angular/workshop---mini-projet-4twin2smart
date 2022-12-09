@@ -9,26 +9,33 @@ import { University } from '../university/university';
   providedIn: 'root'
 })
 export class UniversityServiceService {
-  private UnivUrl="http://localhost:9090/univ/"
+  private UnivUrl="http://localhost:9090/Universite"
 
   constructor(private httpuniversity:HttpClient) { }
 
   getListUniversity(): Observable<University[]>{
-    return this.httpuniversity.get<University[]>('${this.UnivUrl}');
+    return this.httpuniversity.get<University[]>(`${this.UnivUrl}`);
   }
 
   getallUniversities():Observable<university[]>{
-    return this.httpuniversity.get<university[]>(this.UnivUrl+'all')
+    return this.httpuniversity.get<university[]>(`${this.UnivUrl+'/all'}`)
 
   }
-  getnomclubs():Observable<String[]>{
-    return this.httpuniversity.get<String[]>(this.UnivUrl+'NameUniv')
+  CreatUniversity(university: University): Observable<university>{
+    return this.httpuniversity.post<university>(`http://localhost:9090/Universite/save`, university);
   }
-  addmembre(university:university,nomuniversity1:String):Observable<any>{
-      return this.httpuniversity.post<any>(this.UnivUrl+'save'+'/',university)
+
+  getUniversityById(UnivId: number) : Observable<University>{
+    return this.httpuniversity.get<University>(`${this.UnivUrl}/${UnivId}`);
   }
-  deletemembre(id:number):Observable<String>{
-    return this.httpuniversity.delete<String>(this.UnivUrl+id)
+
+  updateUniversity(UnivId: number, University: University) : Observable<university> {
+    return this.httpuniversity.put<University> (`${this.UnivUrl}/${UnivId}` , University);
+
+  }
+
+  deleteUniversite(UnivId: number ): Observable<University>{
+    return this.httpuniversity.delete<University> (`${this.UnivUrl}/${UnivId}`);
   }
 
 }

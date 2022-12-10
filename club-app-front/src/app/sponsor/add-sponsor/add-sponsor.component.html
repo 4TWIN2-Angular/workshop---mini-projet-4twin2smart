@@ -20,10 +20,12 @@
  </div>
  <div >
    <form [formGroup]="myForm" (ngSubmit)="save()" >
+      <!-- input name-->
       <div class="form-group">
          <label for="nom">Nom</label>
          <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Enter nom de societé">
        </div>
+       <!-- condition name-->
        <div *ngIf="myForm.get('nom').invalid && myForm.get('nom').touched">
          <div *ngIf="myForm.get('nom').errors['required']" class="alert alert-danger" role="alert">
            Nom Obligatoire !
@@ -35,12 +37,14 @@
            tous des lettres
         </div>
         </div>
+        <!-- input email-->
            <div class="form-group">
            <label for="exampleInputEmail1">Email address</label>
            <input type="email" formControlName="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
          
          </div>
+         <!-- condition email-->
          <div *ngIf="myForm.get('email').invalid && myForm.get('email').touched">
             <div *ngIf="myForm.get('email').errors['required']" class="alert alert-danger" role="alert">
               Email est Obligatoire !
@@ -49,20 +53,22 @@
              la forme de votre email doit etre "xxxxx@gmail.com"
            </div>
            </div>
-
+       <!-- input categorie -->
            <div class="mb-4">
             <label class="my-1 me-2" for="categorie">Categorie</label> 
-            <select class="form-select" id="Categorie" aria-label="Default select example">
+            <select class="form-select" id="categorie" aria-label="Default select example">
                <option selected="selected">Individuelle</option>
                <option value="1">Societé</option>
                <option value="2">Startup</option>
             </select>
          </div>
+         <!-- condition categorie-->
          <div *ngIf="myForm.get('categorie').invalid && myForm.get('categorie').touched">
             <div *ngIf="myForm.get('categorie').errors['required']" class="alert alert-danger" role="alert">
               categorie est Obligatoire !
             </div>
            </div>
+           <!-- input phone-->
                <div class="mb-3">
                       <label for="phone">Numéro téléphone</label>
                       <div class="input-group">
@@ -74,6 +80,7 @@
                          <input type="text" class="form-control" formControlName="phone"  id="phone" placeholder="phone Number" aria-label="phone">
                       </div>
                 </div>
+                <!-- condition phone-->
                 <div *ngIf="myForm.get('phone').invalid && myForm.get('phone').touched">
                   <div *ngIf="myForm.get('phone').errors['required']" class="alert alert-danger" role="alert">
                     Numéro téléphone est Obligatoire !
@@ -93,6 +100,17 @@
                    </div>
                   
                  </div>
+                 <div class="mb-4">
+                  <label class="my-1 me-2" for="events">evenement</label> 
+                  <select class="form-select" id="events" aria-label="Default select example">
+                     <div  *ngFor="let event of listEvent ; let i=index">
+                        <option>{{event.nomEvent}}</option>
+
+                     </div>
+                     
+                  </select>
+               </div>
+
          <button type="submit"  class="btn btn-primary">Submit</button>
 
 

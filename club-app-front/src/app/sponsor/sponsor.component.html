@@ -21,39 +21,8 @@
       </div>
    </div>
 </nav>
-<div class="row">
-   <div class="py-4">
-      <div class="dropdown">
-         <button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-            ajouter sponsor
-         </button>
-         <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-            <a class="dropdown-item d-flex align-items-center" [routerLink]="['sponsor-add']">
-               <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
-               </svg>
-               ajouter sponsor
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-               <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
-               </svg>
-               Ajouter sponsoring
-            </a>
-  
-         </div>
-      </div>
-   </div>
-</div>
 
-<div class="row">
 
-   <div class="col-12 col-xl-8">
-<div class="row">
-   <div class="col-12 mb-4">
       <div class="card border-0 shadow">
          <div class="card-header">
             <div class="row align-items-center">
@@ -63,59 +32,59 @@
                <div class="col text-end"><a href="#" class="btn btn-sm btn-primary">voir tous</a></div>
             </div>
          </div>
-<div class="table-responsive">
-    <table class="table align-items-center table-flush">
-       <thead class="thead-light">
-          <tr>
-            <th class="border-bottom" scope="col">logo</th>
-             <th class="border-bottom" scope="col">nom</th>
-             <th class="border-bottom" scope="col">categorie</th>
-             <th class="border-bottom" scope="col">nombre d'evenement</th>
-             <th class="border-bottom" scope="col">modifier</th>
-             <th class="border-bottom" scope="col">supprimer</th>
-
-          </tr>
-       </thead>
-       <tbody>
-
-         <div  *ngFor="let sponsor of listSponsor; let i=index">
-            <tr>
-               <td>
-                  <img src="{{sponsor.logo}}" alt="">
-               
-               </td>
-               <th class="text-gray-900" scope="row">{{sponsor.nom}}</th>
-               <td class="fw-bolder text-gray-500"> {{sponsor.categorie}} </td>
-               <td class="fw-bolder text-gray-500"> {{sponsor.nbrEvent}} </td>
-            </tr>
-            </div>
-
-
-
-       </tbody>
-    </table>
- </div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-12 col-xl-4">
-<div class="col-12 mb-4">
-       <div class="card bg-yellow-100 border-0 shadow">
-          <div class="card-header d-sm-flex flex-row align-items-center flex-0">
-             <div class="d-block mb-3 mb-sm-0">
-                <div class="fs-5 fw-normal mb-2">Totale de spnsoring</div>
-                <h2 class="fs-3 fw-extrabold">10,567 dinars</h2>
-                <div class="small mt-2"><span class="fw-normal me-2">hier</span> <span class="fas fa-angle-up text-success"></span> <span class="text-success fw-bold">10.57%</span></div>
-             </div>
-             <div class="d-flex ms-auto"><a href="#" class="btn btn-secondary text-dark btn-sm me-2">Mois</a></div>
-          </div>
-          <div class="card-body p-2">
-             <div class="ct-chart-sales-value ct-double-octave ct-series-g"></div>
-          </div>
-       </div>
-    </div>
-   </div>
-
+         <div class="table-responsive">
+            <table class="table table-centered table-nowrap mb-0 rounded" >
+               <thead class="thead-light">
+                  <tr >
+                     <th class="border-0 rounded-start">#</th>
+                     <th class="border-0">Nom</th>
+                     <th class="border-0">categorie</th>
+                     <th class="border-0">email</th>
+                     <th class="border-0">num Telephone</th>
+                     <th class="border-0">evenement</th>
+                     <th class="border-0">montant</th>
+                     <th class="border-0">Fonc</th>
+                     
+                     
+                  </tr>
+               </thead>
+               <tbody>
+                 
+                   <tr  *ngFor="let sponsor of listSponsor; let i=index">
+                      <td class="py-2">{{i}}</td>
+                      <td >
+                         
+                          <div class="py-2">{{sponsor.labelle}}</div>
+                      </td>
+                      <td > <div class="py-2"> {{sponsor.categorieSponsor}}</div></td>
+                      <td > <div class="py-2" >{{sponsor.email}}</div></td>
+                      <td ><div class="py-2">{{sponsor.phone}}</div></td>
+                      <td>
+                        
+                            <div >
+                               <div class=" fw-bold py-2" >{{sponsor.events.nomEvent }}</div>
+                            </div>
+                            
+                            
+                         
+                      </td>
+                     
+                      <td class="text-success">
+                       <div class="d-flex align-items-center">
+                                <div class=" fw-bold py-2"> {{sponsor.montant}}</div>
+                          
+                       </div>
+                    </td>
+                      <td>
+                       <button class="btn  btn-outline-danger" type="button" (click)="delete(sponsor.id)" >Delete</button> 
+                         
+                      </td>
+                   </tr>
+                
+                  
+                
+               </tbody>
+            </table>
+         </div>
 
 </div>

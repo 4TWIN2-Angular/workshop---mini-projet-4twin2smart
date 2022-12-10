@@ -19,4 +19,9 @@ this.getAllSponsors();
   }
   
 
+  delete(pos:number){
+    this.spS.deletesponsor(pos).subscribe(()=>this.spS.getallsponsor().subscribe(res=>this.listSponsor=res));
+  
+    }
+
 }

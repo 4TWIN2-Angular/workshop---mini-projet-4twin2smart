@@ -13,8 +13,6 @@ import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { ClubComponent } from './club/club.component';
 import { EventComponent } from './event/event.component';
 
@@ -37,13 +35,6 @@ import { UpdateUniversityComponent } from './university/update-university/update
     HeaderComponent,
     FooterComponent,
     SponsorComponent,
-    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
     MembreComponent,
     TablemembreComponent,
     AddmembreComponent,
@@ -56,8 +47,7 @@ import { UpdateUniversityComponent } from './university/update-university/update
     UniversityComponent,
     AddUniversityComponent,
     UpdateUniversityComponent
-],
-
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

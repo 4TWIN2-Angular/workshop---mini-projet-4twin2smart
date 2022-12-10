@@ -14,6 +14,8 @@ import { CreatUniversityComponent } from './university/creat-university/creat-un
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
 import { DetailsUniversityComponent } from './university/details-university/details-university.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ListUniversityModule } from './university/list-university/list-university.module';
 
 
 @NgModule({
@@ -24,17 +26,19 @@ import { DetailsUniversityComponent } from './university/details-university/deta
     FooterComponent,
     AddUniversityComponent,
     UniversityComponent,
-    ListUniversityComponent,
+    //ListUniversityComponent,
     CreatUniversityComponent,
     UpdateUniversityComponent,
     DeletUniversityComponent,
-    DetailsUniversityComponent
+    DetailsUniversityComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ListUniversityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

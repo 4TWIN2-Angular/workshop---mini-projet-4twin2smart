@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UniversityServiceService } from 'src/app/shared/university-service.service';
 import { University } from '../university';
@@ -11,10 +12,13 @@ import { University } from '../university';
 export class CreatUniversityComponent implements OnInit {
 
   university: University = new University();
+  myForm : any;
   constructor(private universityservice: UniversityServiceService,
-    private router: Router) { }
+    private router: Router,
+     ) { }
 
   ngOnInit(): void {
+    
   }
 
   saveUniversiy(){

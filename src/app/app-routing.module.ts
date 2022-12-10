@@ -9,17 +9,25 @@ import { university } from './models/University';
 import { CreatUniversityComponent } from './university/creat-university/creat-university.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { DetailsUniversityComponent } from './university/details-university/details-university.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ListUniversityModule } from './university/list-university/list-university.module';
 
 const routes: Routes = [
   {path: '', redirectTo:'Dashbord' , pathMatch:'full' },
   {path:'addUniv',component:AddUniversityComponent},
-  {path:'ListUniv',component:ListUniversityComponent},
+  //{path:'ListUniv',component:ListUniversityComponent},
   {path:'CreatUniv',component:CreatUniversityComponent},
   {path:'UpdateUniversity/:UnivId',component:UpdateUniversityComponent},
   {path:'DetailsUniversity/:UnivId',component:DetailsUniversityComponent},
-  {path:'university', component:UniversityComponent},
 
-  //{path:'university',   loadChildren: () => import('./university/university').then(u => u.University)}
+  {path:'university', children:[
+    {path:'DetailsUniversity/:UnivId', component: DetailsUniversityComponent},
+    {path:'ListUniv',component:ListUniversityComponent},
+  ]
+  },
+  {path:'**',component:PageNotFoundComponent},
+
+ // {path:'listuniversity',   loadChildren: () => import('./listuniversity/ListUniversity.Module').then(u => u.University)}
 ];
   
 @NgModule({

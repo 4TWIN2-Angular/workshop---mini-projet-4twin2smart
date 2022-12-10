@@ -1,0 +1,20 @@
+<div class="col">
+    <div class="card h-100">
+        <div class="img-wrap">
+            <a class="close" (click)="notifyDeleteClub()">
+                <h3 class="redTextOverride">&times;</h3>
+            </a>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">{{club.nomdeclub}}</h4>
+            <h6 class="card-text"
+                [ngStyle]="{'color':club.specialite === 'IT' ? 'green' : club.specialite === 'Music'? 'orange' : club.specialite === 'Sport'? 'blue':'red' }">
+                {{club.specialite}}</h6>
+            <p class="card-text">Date de Creation : {{club.date_creation}}</p>
+
+            <p class="card-text">Description : {{club.description}}</p>
+            <a routerLink="club/updateClub/{{club.id_club}}" [ngClass]="['btn', 'btn-outline-warning']">Edit</a>
+            &nbsp;
+        </div>
+    </div>
+</div>

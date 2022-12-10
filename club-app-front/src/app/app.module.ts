@@ -7,7 +7,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { ClubComponent } from './club/club.component';
+
+
 
 @NgModule({
   declarations: [
@@ -16,11 +20,13 @@ import { ClubComponent } from './club/club.component';
     HeaderComponent,
     FooterComponent,
     SponsorComponent,
-    ClubComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -42,5 +42,6 @@ export class ClubListComponent implements OnInit {
     })
     window.location.reload();
   }
-
+  
+  
 }

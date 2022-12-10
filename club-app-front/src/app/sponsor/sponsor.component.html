@@ -1,32 +1,90 @@
-<div class="table-responsive">
-    <table class="table align-items-center table-flush">
-       <thead class="thead-light">
-          <tr>
-            <th class="border-bottom" scope="col">logo</th>
-             <th class="border-bottom" scope="col">nom</th>
-             <th class="border-bottom" scope="col">categorie</th>
-             <th class="border-bottom" scope="col">nombre d'evenement</th>
-             <th class="border-bottom" scope="col">modifier</th>
-             <th class="border-bottom" scope="col">supprimer</th>
 
-          </tr>
-       </thead>
-       <tbody>
+<nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
+   <div class="container-fluid px-0">
+      <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+          <!--search button-->
+         <div class="d-flex align-items-center">
+            <form class="navbar-search form-inline" id="navbar-search-main">
+            
+               <div class="input-group input-group-merge search-bar">
+                  <span class="input-group-text" id="topbar-addon">
+                     <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                     </svg>
+                  </span>
+                  <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Search" aria-label="Search" aria-describedby="topbar-addon">
+               </div>
+            </form>
+         </div>
+         <!--end of search button-->
+      
+      </div>
+   </div>
+</nav>
 
-         <div  *ngFor="let sponsor of listSponsor; let i=index">
-            <tr>
-               <td>
-                  <img src="{{sponsor.logo}}" alt="">
-               
-               </td>
-               <th class="text-gray-900" scope="row">{{sponsor.nom}}</th>
-               <td class="fw-bolder text-gray-500"> {{sponsor.categorie}} </td>
-               <td class="fw-bolder text-gray-500"> {{sponsor.nbrEvent}} </td>
-            </tr>
+
+      <div class="card border-0 shadow">
+         <div class="card-header">
+            <div class="row align-items-center">
+               <div class="col">
+                  <h2 class="fs-5 fw-bold mb-0">Lists des sponsors</h2>
+               </div>
+               <div class="col text-end"><a href="#" class="btn btn-sm btn-primary">voir tous</a></div>
             </div>
+         </div>
+         <div class="table-responsive">
+            <table class="table table-centered table-nowrap mb-0 rounded" >
+               <thead class="thead-light">
+                  <tr >
+                     <th class="border-0 rounded-start">#</th>
+                     <th class="border-0">Nom</th>
+                     <th class="border-0">categorie</th>
+                     <th class="border-0">email</th>
+                     <th class="border-0">num Telephone</th>
+                     <th class="border-0">evenement</th>
+                     <th class="border-0">montant</th>
+                     <th class="border-0">Fonc</th>
+                     
+                     
+                  </tr>
+               </thead>
+               <tbody>
+                 
+                   <tr  *ngFor="let sponsor of listSponsor; let i=index">
+                      <td class="py-2">{{i}}</td>
+                      <td >
+                         
+                          <div class="py-2">{{sponsor.labelle}}</div>
+                      </td>
+                      <td > <div class="py-2"> {{sponsor.categorieSponsor}}</div></td>
+                      <td > <div class="py-2" >{{sponsor.email}}</div></td>
+                      <td ><div class="py-2">{{sponsor.phone}}</div></td>
+                      <td>
+                        
+                            <div >
+                               <div class=" fw-bold py-2" >{{sponsor.events.nomEvent }}</div>
+                            </div>
+                            
+                            
+                         
+                      </td>
+                     
+                      <td class="text-success">
+                       <div class="d-flex align-items-center">
+                                <div class=" fw-bold py-2"> {{sponsor.montant}}</div>
+                          
+                       </div>
+                    </td>
+                      <td>
+                       <button class="btn  btn-outline-danger" type="button" (click)="delete(sponsor.id)" >Delete</button> 
+                         
+                      </td>
+                   </tr>
+                
+                  
+                
+               </tbody>
+            </table>
+         </div>
 
-
-
-       </tbody>
-    </table>
- </div>
+</div>

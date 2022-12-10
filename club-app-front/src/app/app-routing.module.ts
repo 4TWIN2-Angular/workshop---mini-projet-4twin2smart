@@ -1,6 +1,6 @@
-import { SponsorComponent } from './sponsor/sponsor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SponsorComponent } from './sponsor/sponsor.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
@@ -11,7 +11,6 @@ import { EventupdateComponent } from './event/eventupdate/eventupdate.component'
 import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 const routes: Routes = [
-  {path: '', component: DashboardComponent },
   {path:'listmembres',component:TablemembreComponent,},
   {path:'add',component:AddmembreComponent},
   {path:'addUniv',component:AddUniversityComponent},
@@ -21,10 +20,8 @@ const routes: Routes = [
 {path:'addevent',component:AddeventComponent},
 {path:'event',component:EventComponent},
 {path:'eventdelete',component:EventdeleteComponent},
-{path:'updateevent/:id_E',component:EventupdateComponent}
-
- { path: '', component: DashboardComponent },
-  { path: 'club', loadChildren: () => import('./club/club.module').then(m => m.ClubModule) }
+{path:'updateevent/:id_E',component:EventupdateComponent},
+{ path: 'club', loadChildren: () => import('./club/club.module').then(m => m.ClubModule) }
 
 ];
 

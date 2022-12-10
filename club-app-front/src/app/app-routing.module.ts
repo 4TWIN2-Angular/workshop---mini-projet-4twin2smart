@@ -5,8 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { TablemembreComponent } from './membre/tablemembre/tablemembre.component';
-import { EventComponent } from './event/event.component';
-
+import { EventComponent } from './event/event.component'; 
 import { AddeventComponent } from './event/addevent/addevent.component';
 import { EventupdateComponent } from './event/eventupdate/eventupdate.component';
 import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
@@ -24,7 +23,8 @@ const routes: Routes = [
 {path:'eventdelete',component:EventdeleteComponent},
 {path:'updateevent/:id_E',component:EventupdateComponent}
 
-
+ { path: '', component: DashboardComponent },
+  { path: 'club', loadChildren: () => import('./club/club.module').then(m => m.ClubModule) }
 
 ];
 

@@ -13,7 +13,6 @@ import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
-<<<<<<< HEAD
 import { EventComponent } from './event/event.component';
 
 
@@ -24,11 +23,9 @@ import { EventdeleteComponent } from './event/eventdelete/eventdelete.component'
 
 import { ReactiveFormsModule } from '@angular/forms';
 
-=======
 import { UniversityComponent } from './university/university.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
->>>>>>> 2ed4ec563f4c00403568e0d2b6f157bcd8e5177f
 
 @NgModule({
   declarations: [
@@ -41,22 +38,14 @@ import { UpdateUniversityComponent } from './university/update-university/update
     AddmembreComponent,
     PipemembrePipe,
     SponsorComponent,
-<<<<<<< HEAD
     EventComponent,
-
     AddeventComponent,
     EventupdateComponent,
     EventdeleteComponent,
-    
-    
-   
-    
-=======
     UniversityComponent,
     AddUniversityComponent,
     UpdateUniversityComponent
->>>>>>> 2ed4ec563f4c00403568e0d2b6f157bcd8e5177f
-  ],
+],
 
   imports: [
     BrowserModule,

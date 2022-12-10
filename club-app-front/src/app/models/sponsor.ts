@@ -1,8 +1,12 @@
+import { evenement } from "./evenement";
+
 export class Sponsor{
     id: number;
     logo:string;
-    nom: string ;
-    categorie: string;
+    labelle: string ;
+    email:string;
+    categorieSponsor: string;
     montant: number;
-    nbrEvent: number;
+    events:evenement;
+    phone: string;
     }

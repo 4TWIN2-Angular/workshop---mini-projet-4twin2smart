@@ -22,11 +22,7 @@
    </div>
 </nav>
 
-<div class="row">
 
-   <div class="col-12 col-xl-8">
-<div class="row">
-   <div class="col-12 mb-4">
       <div class="card border-0 shadow">
          <div class="card-header">
             <div class="row align-items-center">
@@ -45,7 +41,7 @@
                      <th class="border-0">categorie</th>
                      <th class="border-0">email</th>
                      <th class="border-0">num Telephone</th>
-                     <th class="border-0">nbr event</th>
+                     <th class="border-0">evenement</th>
                      <th class="border-0">montant</th>
                      <th class="border-0">Fonc</th>
                      
@@ -66,7 +62,7 @@
                       <td>
                         
                             <div >
-                               <div class=" fw-bold py-2" >{{sponsor.event}}</div>
+                               <div class=" fw-bold py-2" >{{sponsor.events.nomEvent }}</div>
                             </div>
                             
                             
@@ -80,7 +76,7 @@
                        </div>
                     </td>
                       <td>
-                       <button class="btn  btn-outline-danger" type="button" [routerLink]="['']" >Delete</button> 
+                       <button class="btn  btn-outline-danger" type="button" (click)="delete(sponsor.id)" >Delete</button> 
                          
                       </td>
                    </tr>
@@ -90,28 +86,5 @@
                </tbody>
             </table>
          </div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="col-12 col-xl-4">
-<div class="col-12 mb-4">
-       <div class="card bg-yellow-100 border-0 shadow">
-          <div class="card-header d-sm-flex flex-row align-items-center flex-0">
-             <div class="d-block mb-3 mb-sm-0">
-                <div class="fs-5 fw-normal mb-2">Totale de spnsoring</div>
-                <h2 class="fs-3 fw-extrabold">10,567 dinars</h2>
-                <div class="small mt-2"><span class="fw-normal me-2">hier</span> <span class="fas fa-angle-up text-success"></span> <span class="text-success fw-bold">10.57%</span></div>
-             </div>
-             <div class="d-flex ms-auto"><a href="#" class="btn btn-secondary text-dark btn-sm me-2">Mois</a></div>
-          </div>
-          <div class="card-body p-2">
-             <div class="ct-chart-sales-value ct-double-octave ct-series-g"></div>
-          </div>
-       </div>
-    </div>
-   </div>
-
 
 </div>

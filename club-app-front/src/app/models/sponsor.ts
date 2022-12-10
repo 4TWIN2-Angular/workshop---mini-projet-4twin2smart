@@ -1,3 +1,5 @@
+import { evenement } from "./evenement";
+
 export class Sponsor{
     id: number;
     logo:string;
@@ -5,6 +7,6 @@ export class Sponsor{
     email:string;
     categorieSponsor: string;
     montant: number;
-    event:any;
+    events:evenement;
     phone: string;
     }

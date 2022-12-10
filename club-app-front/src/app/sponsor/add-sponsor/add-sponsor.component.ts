@@ -2,7 +2,7 @@ import { SponsorService } from './../../shared/sponsor.service';
 import { Sponsor } from './../../models/sponsor';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { evenement as Event } from 'src/app/models/evenement';
 @Component({
   selector: 'app-add-sponsor',
   templateUrl: './add-sponsor.component.html',
@@ -11,13 +11,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AddSponsorComponent implements OnInit {
   myForm :  FormGroup;
 sponsor: Sponsor= new Sponsor();
- 
+listEvent: Event[]=[];
+
   constructor(private spS:SponsorService) { }
-
+  getAllEvent(){
+    this.spS.getallevent().subscribe(res=>
+      { 
+        
+        this.listEvent=res
+        console.log(res)
+      });
+  }
   ngOnInit(): void {
+    this.getAllEvent();
     this.createForm(new Sponsor());
-
-   
+    console.log(this.listEvent);
   }
 
 

@@ -13,6 +13,16 @@ import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
+import { EventComponent } from './event/event.component';
+
+
+
+import { AddeventComponent } from './event/addevent/addevent.component';
+import { EventupdateComponent } from './event/eventupdate/eventupdate.component';
+import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +34,25 @@ import { SponsorComponent } from './sponsor/sponsor.component';
     TablemembreComponent,
     AddmembreComponent,
     PipemembrePipe,
-    SponsorComponent
+    SponsorComponent,
+    EventComponent,
+
+    AddeventComponent,
+    EventupdateComponent,
+    EventdeleteComponent,
+    
+    
+   
+    
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

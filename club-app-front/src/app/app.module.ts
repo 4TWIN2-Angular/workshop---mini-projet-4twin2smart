@@ -28,6 +28,8 @@ import { UniversityComponent } from './university/university.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 
+import{SimpleNotificationsModule} from 'angular2-notifications'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { UpdateUniversityComponent } from './university/update-university/update
     EventdeleteComponent,
     UniversityComponent,
     AddUniversityComponent,
-    UpdateUniversityComponent
+    UpdateUniversityComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,8 @@ import { UpdateUniversityComponent } from './university/update-university/update
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,9 +27,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UniversityComponent } from './university/university.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
-
+import { ListUniversityModule } from './university/list-university/list-university.module';
 import{SimpleNotificationsModule} from 'angular2-notifications'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
+import { DetailsUniversityComponent } from './university/details-university/details-university.component';
+import { listUniversityComponent } from './university/list-university/list-university.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UniversityComponent,
     AddUniversityComponent,
     UpdateUniversityComponent,
+    DeletUniversityComponent,
+    DetailsUniversityComponent,
     
   ],
   imports: [
@@ -58,7 +63,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     SimpleNotificationsModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ListUniversityModule
+
+ 
+    
     ],
   providers: [],
   bootstrap: [AppComponent]

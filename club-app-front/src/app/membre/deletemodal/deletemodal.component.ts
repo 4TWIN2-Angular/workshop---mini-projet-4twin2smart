@@ -45,16 +45,17 @@ constructor(private members:MembreserviceService,private rout:Router) {
   }
  
 savemembre1(){
-  
+  this.savemembre()
   Swal.fire(
-          
+   
+    
     'Done!',
-  'Membre est ajotuée !',
-    'success',
+    'Membre est ajotuée !',
+    'success',  
     setTimeout(() => {
-      this.savemembre(),
+      
     window.location.reload()
-    }, 3000),
+    }, 10000),
     
   )
 }

@@ -81,7 +81,7 @@
           </li>-->
           <!--page exmple -->
           <li class="nav-item">
-             <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu-membre">
+             <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu-membre" >
                 <span>
                    <span class="sidebar-icon">
                       <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@
                          <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
                       </svg>
                    </span>
-                   <span class="sidebar-text">Membre</span> 
+                   <span class="sidebar-text" data-bs-dismiss="submenu-membre">Membre</span> 
                 </span>
                 <span class="link-arrow">
                    <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -97,12 +97,12 @@
                    </svg>
                 </span>
              </span>
-             <div class="multi-level collapse" role="list" id="submenu-membre" aria-expanded="false">
+             <div class="multi-level collapse" role="list" id="submenu-membre" aria-expanded="false" >
                 <ul class="flex-column nav">
                    <li class="nav-item"><a class="nav-link" [routerLink]="['/membre/listmembres']"><span class="sidebar-text">Liste des membres</span></a></li>
-                   <li class="nav-item"><a class="nav-link" [routerLink]="['/membre/add']"><span class="sidebar-text">Addmembre</span></a></li>
-                   <li class="nav-item"><a class="nav-link" [routerLink]="['/forgotpassword']"><span class="sidebar-text">Forgot password</span></a></li>
-                   <li class="nav-item"><a class="nav-link" [routerLink]="['/resetpassword']"><span class="sidebar-text">Reset password</span></a></li>
+                   <li class="nav-item"><a class="nav-link" ><span class="sidebar-text">Addmembre</span></a></li>
+                   <li class="nav-item"><a class="nav-link" ><span class="sidebar-text">Forgot password</span></a></li>
+                   <li class="nav-item"><a class="nav-link" ><span class="sidebar-text">Reset password</span></a></li>
                 </ul>
              </div>
           </li>

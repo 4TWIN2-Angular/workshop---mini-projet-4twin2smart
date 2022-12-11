@@ -22,11 +22,7 @@ import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component
     HeaderComponent,
     FooterComponent,
     MembreComponent,
-    TablemembreComponent,
-    AddmembreComponent,
-    PipemembrePipe,
     SponsorComponent,
-    DeletemodalComponent
   ],
 
   imports: [

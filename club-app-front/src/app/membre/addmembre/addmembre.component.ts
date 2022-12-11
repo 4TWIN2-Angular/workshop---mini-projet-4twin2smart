@@ -1,18 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormControlName, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 
-
-
-
-
-
-
-
- 
 
 
 
@@ -24,23 +16,24 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
   styleUrls: ['./addmembre.component.css']
 })
 export class AddmembreComponent implements OnInit {
- 
- 
+    rola:String;
+    nom:String;
+    prenom:String;
     membre=new membre();
-    membre2=new membre();
+    membre2=new membre()
     nomdeclubs:String[];
     id_membre:number;
     clubassignedto:String;
     updatemembre;
     createthisform(){
     this.updatemembre=new FormGroup({
-      nom_M:new FormControl(this.membre.nom_M),
-      prenom_M:new FormControl(this.membre.prenom_M),
-      email:new FormControl(this.membre.email),
-      num_M: new FormControl(this.membre.num_M),
-      role:new FormControl(this.membre.role),
+      nom_M:new FormControl(this.membre.nom_M,[Validators.required,Validators.minLength(3),Validators.pattern("[a-zA-Z]*")]),
+      prenom_M:new FormControl(this.membre.prenom_M,[Validators.required,Validators.minLength(3),Validators.pattern("[a-zA-Z]*")]),
+      email:new FormControl(this.membre.email,[Validators.required,Validators.pattern("^[a-zA-Z0-9._-]+@gmail.com|^[a-zA-Z0-9._-]+@+[a-z]*.tn")]),
+      num_M: new FormControl(this.membre.num_M,[Validators.required,Validators.pattern("[2]{1}[0-9]{1}[0-9]{6}|[9]{1}[0-9]{1}[0-9]{6}|[5]{1}[0-9]{1}[0-9]{6}")]),
+      role:new FormControl(this.membre.role,[Validators.required]),
     //  club_nom:new FormControl(this.membre.club.nomdeclub)
-
+      
 
     })
      
@@ -52,9 +45,10 @@ export class AddmembreComponent implements OnInit {
     this.createthisform()
     //console.log(this.clubassignedto)
     this.rout.params.subscribe(data=>{this.id_membre=data['id']
-    this.membres.retrievemembre(this.id_membre).subscribe(data=>{this.membre=data,console.log(this.membre),this.createthisform()})})
+    this.membres.retrievemembre(this.id_membre).subscribe(data=>{this.membre=data,console.log(this.membre),this.createthisform(),   this.nom=this.membre.nom_M
+      this.prenom=this.membre.prenom_M,this.rola=this.membre.role})})
     console.log(this.id_membre)
-
+ 
     this.membres.getnomclubs().subscribe(data=>{this.nomdeclubs=data
     })
       
@@ -77,16 +71,28 @@ export class AddmembreComponent implements OnInit {
     this.membre2.num_M=  this.updatemembre.get('num_M').value;
     this.membre2.role=  this.updatemembre.get('role').value;
     this.membre2.club=this.membre.club
-    this.membres.updatemembre(this.membre2).subscribe(data=>{})
    
    // this.updatemembre.reset();
-   
+   this.membres.updatemembre(this.membre2).subscribe(data=>{})
    Swal.fire({
-    icon: 'success',
-    title: 'Your work has been saved',
-    showConfirmButton: false,
-    timer: 1500
+    title: 'Do you want to save the changes?',
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'Save',
+    denyButtonText: `Don't save`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('Saved!', '', 'success')
+      
+    } else if (result.isDenied) {
+      Swal.fire('Changes are not saved', '', 'info'),
+      this.membre2= new membre();
+    }
   })
   
+   }
+   gethistory(){
+    this.membres.gethistory('houssembalti.de@gmail.com').subscribe(data=>console.log(data))
    }
 }

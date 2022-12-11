@@ -1,0 +1,120 @@
+<!--<div class="card border-0 shadow jarebni">
+    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+       <h2 class="fs-5 fw-bold mb-0" style="margin-left: 4rem;">Detail Membre</h2>
+       <button class="btn btn-sm btn-primary" (click)="hideit()">Hide</button>
+
+    </div>
+    <div class="card-body">
+       <ul class="list-group list-group-flush list my--3">
+          <li class="list-group-item px-0">
+             <div class="row align-items-center" style="justify-content: space-between;">
+                <div class="col-12 ms--2">
+                    <div class="row">
+                    <h3 class="col">Nom</h3>
+                   <h4 class="col-6 h6"><a href="#">{{element.nom_M}}</a></h4>
+                </div>
+                </div>
+                
+             </div>
+          </li>
+          <li class="list-group-item px-0">
+            <div class="row align-items-center" style="justify-content: space-between;">
+               <div class="col-12 ms--2">
+                   <div class="row">
+                   <h3 class="col">Prenom</h3>
+                  <h4 class="col-6 h6"><a href="#">{{element.prenom_M}}</a></h4>
+               </div>
+               </div>
+               
+            </div>
+         </li>
+         <li class="list-group-item px-0">
+            <div class="row align-items-center" style="justify-content: space-between;">
+               <div class="col-12 ms--2">
+                   <div class="row">
+                   <h3 class="col">email</h3>
+                  <h4 class="col-6 h6"><a href="#">{{element.email}}</a></h4>
+               </div>
+               </div>
+               
+            </div>
+         </li>
+         <li class="list-group-item px-0">
+            <div class="row align-items-center" style="justify-content: space-between;">
+               <div class="col-12 ms--2">
+                   <div class="row">
+                   <h3 class="col">Numero telephone</h3>
+                  <h4 class="col-6 h6"><a href="#">{{element.num_M}}</a></h4>
+               </div>
+               </div>
+               
+            </div>
+         </li>
+        
+        
+       </ul>
+       
+    </div>-->
+     <!--<div class="col-12 mb-4">
+             <div class="card shadow border-0 text-center p-0 jarebni display block">
+                <div class="profile-cover rounded-top" data-background="assets/img/profile-cover.jpg"></div>
+                <div class="card-body pb-5">
+                  <div class="containers">
+                   <img src="assets/img/images.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
+                   <h1 class="centered" >{{element.prenom_M.charAt(0).toUpperCase()}}{{element.nom_M.charAt(0).toUpperCase()}}</h1>
+                  </div>
+                  
+                   <h4 class="h3" style="text-transform:capitalize;">{{element.nom_M}} {{element.prenom_M}}</h4>
+                   <h5 class="fw-normal">club :{{element.club.nomdeclub}}</h5>
+                   <p class="text-gray mb-4">{{element.role}}</p>
+                   <div class="row"> 
+                   <h3 class="col">Nom</h3>
+                   <h4 class="col-6 h6"><a href="#">{{element.nom_M}}</a></h4>
+                  </div>
+                   <a class="btn btn-sm btn-secondary" href="#" >Send Message</a>
+                </div>
+             </div>
+          </div>-->
+       
+        <div class="col-12 mb-4">
+            <div class="card shadow border-0 text-center p-0 mx-5 jarebni">
+               <div class="profile-cover rounded-top" data-background="assets/img/profile-cover.jpg"></div>
+               <div class="card-body pb-5">
+                  <div class="containers">
+                     <img src="assets/img/images.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
+                     <h1 class="centered" >{{element.nom_M.charAt(0).toUpperCase()}}{{element.prenom_M.charAt(0).toUpperCase()}}</h1>
+                    </div>
+                  <h4 class="h3" style="text-transform:capitalize;">{{element.nom_M}} {{element.prenom_M}}</h4>
+                  <table class="jaaa">
+                     <tr >
+                        <td class="jaa" ><h5 class="fw-normal" style="width:100px;">Nom Club:</h5></td>
+                        <td style="margin-left:-2rem;"> <h4 class="fw-normal" style="text-align:start;margin-left: 1rem;">  {{element.club.nomdeclub}}</h4></td>
+                     </tr>
+                     <tr>
+                        <td class="jaa"><h5 class="fw-normal">Email:</h5></td>
+                        <td> <h6 class="fw-normal" style="text-align:start">{{element.email}}</h6>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="jaa"><h5 class="fw-normal">Num tel:</h5></td>
+                        <td><h5 class="fw-normal" style="text-align:start">{{element.num_M}}</h5>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="jaa"><h5 class="fw-normal">Role:</h5></td>
+                        <td> <h5 class="fw-normal" style="text-align:start">{{element.role}}</h5></td>
+                     </tr>
+                  </table>
+                 <!-- <h5 class="fw-normal">{{element.email}}</h5>
+                  <h4 class="fw-normal">{{element.num_M}}</h4>
+                  <h4 class="fw-normal">{{element.role}}</h4> -->
+                  <button class="btn btn-sm btn-secondary d-inline-flex align-items-center me-2" href="#" (click)="hideit()">
+                     
+                     Hide 
+                  </button>
+                  <button class="btn btn-sm btn-secondary" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"  >Send an Email</button> 
+               </div>
+            </div>
+         </div>
+         
+         <app-mail [maile]="element.email"></app-mail>

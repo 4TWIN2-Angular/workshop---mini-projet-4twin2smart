@@ -6,20 +6,22 @@
             <th>University name</th>
             <th>University Email Adress</th>
             <th>University Phone number</th>
+            <th>University Adress</th>
             <th>Actions</th>
 
         </tr>
     </thead>
     <tbody>
         <tr *ngFor= "let university of universities">
-            <td> {{university.UnivId}}</td>
-            <td> {{university.UnivName}}</td>
+            <td> {{university.idUniv}}</td>
+            <td> {{university.nomUniv}}</td>
             <td> {{university.emailUniv}}</td>
-            <td> {{university.PhoneUniv }}</td>
+            <td> {{university.phoneUniv }}</td>
+            <td> {{university.adresseUniv }}</td>
             <td>
-                <button type="button" (click)= "UpdateUniversity(university.UnivId)" class="btn btn-info btn-gray-800 mb-3" data-bs-toggle="modal" data-bs-target="#modal-default"> Update </button>  
-                <button type="button" (click)= "deleteUniversite(university.UnivId)" class="btn btn-danger btn-red-800 mb-3" style="margin-left: 10px ;"  data-bs-toggle="modal" data-bs-target="#modal-default"> Delete </button> 
-                <button type="button" (click)= "detailsUniversite(university.UnivId)" class="btn btn-info mb-3 " style="margin-left: 10px ;"  data-bs-toggle="modal" data-bs-target="#modal-default"> Details </button>   
+                <button type="button" (click)= "UpdateUniversity(university.idUniv)" class="btn btn-info btn-gray-800 mb-3" data-bs-toggle="modal" data-bs-target="#modal-default"> Update </button>  
+                <button type="button" (click)= "deleteUniversite(university.idUniv)" class="btn btn-danger btn-red-800 mb-3" style="margin-left: 10px ;"  data-bs-toggle="modal" data-bs-target="#modal-default"> Delete </button> 
+                <button type="button" (click)= "detailsUniversite(university.idUniv)" class="btn btn-info mb-3 " style="margin-left: 10px ;"  data-bs-toggle="modal" data-bs-target="#modal-default"> Details </button>   
             </td>
 
         </tr>

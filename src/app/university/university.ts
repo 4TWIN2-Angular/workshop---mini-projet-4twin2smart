@@ -1,8 +1,8 @@
 export class University {
-    UnivId:number;
-    UnivName: String;
-    AdressUniv:String;
-    PhoneUniv:String;
+    idUniv:number;
+    nomUniv: String;
+    adresseUniv:String;
+    phoneUniv:String;
     emailUniv:String;
-    CategorieUniv:string;
+    univCategories:string;
 }

@@ -14,7 +14,7 @@ export class DetailsUniversityComponent implements OnInit {
   constructor(private route: ActivatedRoute, private universityservice:UniversityServiceService) { }
 
   ngOnInit(): void {
-    this.UnivId = this.route.snapshot.params['UnivId'];
+    this.UnivId = this.route.snapshot.params['idUniv'];
 
     this.university = new University();
     this.universityservice.getUniversityById(this.UnivId).subscribe( data =>{

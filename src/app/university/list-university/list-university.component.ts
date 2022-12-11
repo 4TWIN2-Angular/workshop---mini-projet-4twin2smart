@@ -17,24 +17,7 @@ export class ListUniversityComponent implements OnInit {
   ngOnInit(): void {
 
 
-     this.universities = [{
-       "UnivId":1234,
-       "emailUniv":"esprit@gmail.com",
-       "UnivName":"Esprit",
-       "CategorieUniv":"privée",
-       "AdressUniv":"elGazella",
-       "PhoneUniv": "71 345 234"
-     },
-     {
-     "UnivId":6478,
-     "emailUniv":"ESB@gmail.com",
-     "UnivName":"ESB",
-     "CategorieUniv":"privée",
-     "AdressUniv":"elGazella",
-     "PhoneUniv": "71 305 284"
-
-      
-     }];
+//     this.universities = [];
 
     this.getUniversities();
 
@@ -42,7 +25,8 @@ export class ListUniversityComponent implements OnInit {
   }
 
   private getUniversities(){
-    this.UniversityServiceservice.getListUniversity().subscribe(data=> {
+    this.UniversityServiceservice.getallUniversities().subscribe(data=> {
+      console.log(data);
       this.universities = data;
     })
   }
@@ -52,12 +36,15 @@ export class ListUniversityComponent implements OnInit {
 
   }
   deleteUniversite(UnivId:number){
+    console.log(UnivId)
     this.UniversityServiceservice.deleteUniversite(UnivId).subscribe (data =>{
         console.log(data);
         this.getUniversities();
     })
+  
 
   }
+ 
   detailsUniversite(UnivId:number){
     this.router.navigate(['DetailsUniversity',UnivId]);
 

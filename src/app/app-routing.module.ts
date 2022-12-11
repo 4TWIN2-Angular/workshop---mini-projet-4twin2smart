@@ -6,7 +6,7 @@ import { AddUniversityComponent } from './university/add-university/add-universi
 import { ListUniversityComponent } from './university/list-university/list-university.component';
 import { UniversityComponent } from './university/university.component';
 import { university } from './models/University';
-import { CreatUniversityComponent } from './university/creat-university/creat-university.component';
+
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { DetailsUniversityComponent } from './university/details-university/details-university.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -15,8 +15,8 @@ import { ListUniversityModule } from './university/list-university/list-universi
 const routes: Routes = [
   {path: '', redirectTo:'Dashbord' , pathMatch:'full' },
   {path:'addUniv',component:AddUniversityComponent},
-  //{path:'ListUniv',component:ListUniversityComponent},
-  {path:'CreatUniv',component:CreatUniversityComponent},
+  {path:'ListUniv',component:ListUniversityComponent},
+  
   {path:'UpdateUniversity/:UnivId',component:UpdateUniversityComponent},
   {path:'DetailsUniversity/:UnivId',component:DetailsUniversityComponent},
 
@@ -25,7 +25,7 @@ const routes: Routes = [
     {path:'ListUniv',component:ListUniversityComponent},
   ]
   },
-  {path:'**',component:PageNotFoundComponent},
+  
 
  // {path:'listuniversity',   loadChildren: () => import('./listuniversity/ListUniversity.Module').then(u => u.University)}
 ];

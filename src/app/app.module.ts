@@ -10,12 +10,13 @@ import { UniversityComponent } from './university/university.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ListUniversityComponent } from './university/list-university/list-university.component';
-import { CreatUniversityComponent } from './university/creat-university/creat-university.component';
+
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
 import { DetailsUniversityComponent } from './university/details-university/details-university.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ListUniversityModule } from './university/list-university/list-university.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { ListUniversityModule } from './university/list-university/list-universi
     AddUniversityComponent,
     UniversityComponent,
     //ListUniversityComponent,
-    CreatUniversityComponent,
+  
     UpdateUniversityComponent,
     DeletUniversityComponent,
     DetailsUniversityComponent,
@@ -38,6 +39,7 @@ import { ListUniversityModule } from './university/list-university/list-universi
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ListUniversityModule
   ],
   providers: [],

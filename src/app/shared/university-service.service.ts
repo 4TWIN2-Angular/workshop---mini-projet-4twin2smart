@@ -22,15 +22,15 @@ export class UniversityServiceService {
 
   }
   CreatUniversity(university: University): Observable<university>{
-    return this.httpuniversity.post<university>(`http://localhost:9090/Universite/save`, university);
+    return this.httpuniversity.post<university>(`${this.UnivUrl+'/save'}`, university);
   }
 
   getUniversityById(UnivId: number) : Observable<University>{
     return this.httpuniversity.get<University>(`${this.UnivUrl}/${UnivId}`);
   }
 
-  updateUniversity(UnivId: number, University: University) : Observable<university> {
-    return this.httpuniversity.put<University> (`${this.UnivUrl}/${UnivId}` , University);
+  updateUniversity(idUniv: number, University: University) : Observable<university> {
+    return this.httpuniversity.put<University> (`${this.UnivUrl}/${idUniv}` , University);
 
   }
 

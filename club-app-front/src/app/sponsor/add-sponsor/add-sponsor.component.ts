@@ -1,8 +1,11 @@
+import { Data } from './../../../../node_modules/popper.js/index.d';
 import { SponsorService } from './../../shared/sponsor.service';
 import { Sponsor } from './../../models/sponsor';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { evenement as Event } from 'src/app/models/evenement';
+import { EventserviceService } from 'src/app/shared/eventservice.service';
+import {NotificationsService} from 'angular2-notifications'
 @Component({
   selector: 'app-add-sponsor',
   templateUrl: './add-sponsor.component.html',
@@ -10,20 +13,13 @@ import { evenement as Event } from 'src/app/models/evenement';
 })
 export class AddSponsorComponent implements OnInit {
   myForm :  FormGroup;
-sponsor: Sponsor= new Sponsor();
-listEvent: Event[]=[];
+sponsor: Sponsor = new Sponsor();
+listEvent: any;
 
-  constructor(private spS:SponsorService) { }
-  getAllEvent(){
-    this.spS.getallevent().subscribe(res=>
-      { 
-        
-        this.listEvent=res
-        console.log(res)
-      });
-  }
+  constructor(private spS:SponsorService, private event:EventserviceService, private notif:NotificationsService) { }
+
   ngOnInit(): void {
-    this.getAllEvent();
+    this.event.get_list_event().subscribe(data=>this.listEvent=data);
     this.createForm(new Sponsor());
     console.log(this.listEvent);
   }
@@ -47,9 +43,21 @@ save(){
   this.sponsor.labelle= this.myForm.get('nom').value;
   this.sponsor.categorieSponsor=this.myForm.get('categorie').value;
   this.sponsor.phone=this.myForm.get('phone').value;
-this.spS.addsponsor(this.sponsor).subscribe();
+  if(this.spS.addsponsor(this.sponsor).subscribe()  ){
+    this.notif.success(
+      'Ajout avec succés',
+      'votre Sponsor est ajouter avec succés',
+      {
+          timeOut: 5000,
+          showProgressBar: true,
+          pauseOnHover: false,
+          clickToClose: false,
+          maxLength: 10
+      }
+    )
+    this.myForm.reset();
+  }
 
-this.myForm.reset();
 
 
 }

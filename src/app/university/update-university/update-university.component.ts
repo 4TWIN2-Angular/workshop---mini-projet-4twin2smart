@@ -13,7 +13,7 @@ import { University } from '../university';
 })
 export class UpdateUniversityComponent implements OnInit {
   myForm : any ;
-  university: University = new University();
+  univ: University = new University();
   UnivId: number;
   constructor(private univeresitySevice: UniversityServiceService,
     private route: ActivatedRoute,
@@ -21,11 +21,12 @@ export class UpdateUniversityComponent implements OnInit {
 
   
   ngOnInit(): void {
+
     this.UnivId = this.route.snapshot.params['UnivId'];
 
     this.univeresitySevice.getUniversityById(this.UnivId)
     .subscribe(Data => {
-      this.university = Data;
+      this.univ = Data;
     }, error => console.log(error));
       
     
@@ -42,20 +43,23 @@ export class UpdateUniversityComponent implements OnInit {
   }
 
   onSubmit(){
-    this.univeresitySevice.updateUniversity(this.UnivId , this.university ).subscribe( data => {
+    this.univeresitySevice.updateUniversity(this.UnivId , this.univ ).subscribe( data => {
       
     }
     , error => console.log(error));
   }
 
     goToUniversityList(){
-      this.router.navigate(['/University'])
+      this.router.navigate(['/ListUniv'])
   
     }
     
     UpdateUniversity(){
          console.log(this.myForm.get("UnivId").value)
        }
+
+
+
 }
 
   

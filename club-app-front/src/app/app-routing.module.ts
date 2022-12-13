@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SponsorComponent } from './sponsor/sponsor.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { TablemembreComponent } from './membre/tablemembre/tablemembre.component';
 import { EventComponent } from './event/event.component'; 
@@ -14,6 +16,7 @@ import { listUniversityComponent } from './university/list-university/list-unive
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { DetailsUniversityComponent } from './university/details-university/details-university.component';
 const routes: Routes = [
+  {path:'membre',loadChildren:()=>import('./membre/membre.module').then(m=>m.MembreModule)},
   {path:'listmembres',component:TablemembreComponent,},
   {path:'add',component:AddmembreComponent},
   {path:'addUniv',component:AddUniversityComponent},

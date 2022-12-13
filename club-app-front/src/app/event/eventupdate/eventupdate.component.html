@@ -1,10 +1,10 @@
 
        
     
-<!--(avec le ng style--> 
+
 <p class="ajout"> modifier un Evenement </p>
 
-<form #f="ngForm"  (ngSubmit)="onsubmit()" >
+<form #f="ngForm"  (ngSubmit)="Test()" >
   
   <div class="input-group mb-3">
     <span class="input-group-text" id="inputGroup-sizing-default">Id evenement</span>
@@ -55,10 +55,10 @@
           </div>
         </div>
       </div> 
-  <div class="col-12">
-    <input class="btn btn-success" type="submit" value="modifier">
+   <div class="col-12">
+    <input class="btn btn-success" type="submit" value="modifier"  [disabled]="f?.invalid">
   </div>
   
-
+  
    
 </form>

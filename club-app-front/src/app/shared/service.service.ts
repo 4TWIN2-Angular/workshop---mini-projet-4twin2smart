@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Club } from '../models/club';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,14 +15,14 @@ export class ServiceService {
 
   }
  
-  addClub(club: Club):Observable<any> {
-    return this.httpclub.post<any>(this.cluburl +'/save',club);
+  addClub(club: Club) {
+    return this.httpclub.post(this.cluburl +'/save',club);
   }
   getAllclubs():Observable<Club[]>{
     return this.httpclub.get<Club[]>(this.cluburl+'/all');
   }
-  updateClub(id:number,club:Club){
-    return this.httpclub.put(this.cluburl+'/edit/'+id,club)
+  updateClub(club:Club,id:number){
+    return this.httpclub.put(this.cluburl+'/edit/'+id,club,{ responseType: 'text' })
   }
   DeleteClub(id:number){
     return this.httpclub.delete(this.cluburl+'/delete/'+id);
@@ -30,4 +31,5 @@ export class ServiceService {
   Retrieveclub(id:number):Observable<Club>{
     return  this.httpclub.get<Club>(this.cluburl+"/"+id)
   }
+  
 }

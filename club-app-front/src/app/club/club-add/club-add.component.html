@@ -130,55 +130,58 @@
 <div class="row">
    <div class="col-12 col-xl-8">
       <div class="card card-body border-0 shadow mb-4">
-         <h2 class="h5 mb-4">Ajouter ou Modifier un Club</h2>
-         <form class="form-group" [formGroup]="form" (ngSubmit)="submit()">
+         <h2 class="h5 mb-4"> <div [ngStyle]="{'font-style':'italic', 'color':'indianred', 'font-weight': 'bolder'}">Ajouter ou Modifier un Club</div></h2>
+         <form class="form-group" [formGroup]='form' (ngSubmit)="submit(form.value)">
             <div class="row">
                <div class="col-md-6 mb-3">
-                  <div><label for="name">Nom de Club</label> <input class="form-control " type="text"
+                  <div><label for="name">Nom de Club</label> <input class="form-control " type="text" [ngClass]="{'is-valid':form.get('nomdeclub').valid, 'is-invalid':form.get('nomdeclub').invalid}"
                         placeholder="Enter your name" id="nomdeclub" formControlName="nomdeclub">
 
                   </div>
                   <div class="alert alert-danger"
-                     *ngIf="!form.get('nomdeclub')?.valid && form.get('nomdeclub')?.touched">
+                     *ngIf="!form.get('nomdeclub')?.valid && form.get('nomdeclub')?.touched && form.get('nomdeclub')?.dirty">
                      <div *ngIf="form.get('nomdeclub')?.errors?.['required']">this field is required !</div>
-                     <div *ngIf="form.get('nomdeclub')?.errors?.['minlength']">minlength = 3 !</div>
-                     <div *ngIf="form.get('nomdeclub')?.errors?.['pattern']">symbols are not allowed !</div>
+                     <div *ngIf="form.get('nomdeclub')?.errors?.['minlength']">club name is too short</div>
                   </div>
+
+
                </div>
             </div>
             <div class="col-md-6 mb-3">
-               <label class="input-group-text" for="specialite">Specialité</label>
-               <select class="form-select" id="specialite" formControlName="specialite">
-                  <option value="0">IT</option>
-                  <option value="1">Music</option>
-                  <option value="2">Sport</option>
-                  <option value="3">Santé</option>
+               <label>Specialité</label>
+               <select class="form-select" id="specialite" formControlName="specialite" placeholder="Specialité">
+                  <option *ngFor="let s of specialite" [value]="s.value">{{s.value}}</option>
                </select>
+               <div class="alert alert-danger"
+                  *ngIf="!form.get('specialite')?.valid && form.get('specialite')?.touched && form.get('specialite')?.dirty">
+                  <div *ngIf="form.get('specialite')?.errors?.['required']">this field is required !</div>
+               </div>
             </div>
-            <div class="alert alert-danger" *ngIf="!form.get('specialite')?.valid && form.get('specialite')?.touched">
-               <div *ngIf="form.get('specialite')?.errors?.['required']">this field is required !</div>
-             </div>
+
+
+
             <div class="col-md-6 mb-3">
                <div>Description<input class="form-control" type="text" placeholder="Description" id="description"
-                     formControlName="description"> </div>
-                     <div class="alert alert-danger" *ngIf="!form.get('description')?.valid && form.get('description')?.touched">
-                        <div *ngIf="form.get('description')?.errors?.['required']">this field is required !</div>
-                      </div>
+                     formControlName="description" [ngClass]="{'is-valid':form.get('description').valid, 'is-invalid':form.get('description').invalid}"> </div>
+               <div class="alert alert-danger"
+                  *ngIf="!form.get('description')?.valid && form.get('description')?.touched && form.get('description')?.dirty">
+                  <div *ngIf="form.get('description')?.errors?.['required']">this field is required !</div>
+               </div>
             </div>
 
             <div class="col-md-6 mb-3">
                <div>Date de Creation <input class="form-control" id="Date" type="date" placeholder="date de création"
-                     id="date_creation" formControlName="date_creation"></div>
-                     <div class="alert alert-danger" *ngIf="!form.get('date_creation')?.valid && form.get('date_creation')?.touched">
-                        <div *ngIf="form.get('date_creation')?.errors?.['required']">this field is required !</div>
-                      </div>
+                     id="date_creation" formControlName="date_creation" [ngClass]="{'is-valid':form.get('date_creation').valid, 'is-invalid':form.get('date_creation').invalid}"></div>
+               <div class="alert alert-danger"
+                  *ngIf="!form.get('date_creation')?.valid && form.get('date_creation')?.touched && form.get('date_creation')?.dirty">
+                  <div *ngIf="form.get('date_creation')?.errors?.['required']">this field is required !</div>
+               </div>
 
             </div>
 
-            <button type="submit" class="btn btn-block btn-red-800 mb-3" [disabled]="form?.invalid">Save</button>
+            <button type="submit" class="btn btn-outline-dark" [disabled]="form?.invalid" >Save</button>
             &nbsp;
-            <button type="button" class="btn btn-sm btn-danger btn-red-800 mb-3" (click)="Back()">cancel</button>
+            <button type="button" class="btn btn-outline-warning" (click)="Back()">cancel</button>
          </form>
       </div>
       <hr>
-

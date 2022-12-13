@@ -2,7 +2,7 @@ import { Component, OnInit,Input, SimpleChanges} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Mailingcontent } from 'src/app/models/mailing';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
-import Swal from 'sweetalert2/dist/sweetalert2.js'
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-mail',
@@ -24,11 +24,11 @@ mailer= new Mailingcontent();
   }
 sendmail(){
   this.membreservice.envoyermail(this.mailer).subscribe(data=>console.log(data),
-  Swal.fire({
+  /*Swal.fire({
     icon: 'success',
     title: 'Mail Has been sent!',
     showConfirmButton: false,
     timer: 2500
-  }))
+  }) */)
 }
 }

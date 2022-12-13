@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventserviceService } from 'src/app/shared/eventservice.service';
 import {evenement}from'src/app/models/evenement';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -12,13 +12,15 @@ import { Router } from '@angular/router';
 })
 export class ListeventComponent implements OnInit {
   listEvent: any
+ searchevent:number
+ event:evenement=new evenement();
 
-  constructor(private event:EventserviceService,private route:Router) { }
+  constructor(private events:EventserviceService,private route:Router) {  }
 
   ngOnInit(): void {
 
     //this.get_list_event()
-    this.event.get_list_event().subscribe(data=>this.listEvent=data);
+    this.events.get_list_event().subscribe(data=>this.listEvent=data);
     
     
   }
@@ -31,16 +33,25 @@ export class ListeventComponent implements OnInit {
   }
 
   updateevent(id_E:number){
-this.route.navigate(['updateevent',id_E]);
+    this.route.navigate(['updateevent',id_E])
+//this.route.navigate(['updateevent',id_E]);
   }
-  deleteevent(id_E:number){
-    this.event.deleteev(id_E).subscribe(data=>{
+ /* deleteevent(id_E:number){
+    this.events.deleteev(id_E).subscribe(data=>{
       this.get_list_event();
+      Swal.fire('etes vous sure pour la suppression')
       window.location.reload()
     })
      
     }
-  
+   
+    */
+   deleteevent(id_E:number){
+    Swal.fire('etes vous sure pour la suppression !')
+    this.events.deleteev(id_E).subscribe(data=>{
+      this.get_list_event();})
+     
+   }
 
   }
 

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { evenement } from 'src/app/models/evenement';
 
 import { EventserviceService } from 'src/app/shared/eventservice.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -44,9 +45,7 @@ ngOnInit(): void {
 
 
   
-  
-  
- 
+
 
 
 onsubmit(){
@@ -59,7 +58,47 @@ this.gotoeventlist();
 }
 
 gotoeventlist(){
+  
   this.router.navigate(['/listevent']);
+}
+
+ swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+Test(){
+  this.swalWithBootstrapButtons.fire({
+    title: 'sure?',
+    text: "pas d'acces pour le retour !",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'modifié!',
+    cancelButtonText: 'No, cancel!',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.swalWithBootstrapButtons.fire(
+        '!Modifier',
+        'formulaire modifié.',
+        'success'
+      )
+      this.event.modifier_event(this.E,this.id_E).subscribe();
+      this.gotoeventlist();
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      this.swalWithBootstrapButtons.fire(
+        'Cancelled',
+        'Your imaginary file is safe :)',
+        'error'
+      )
+    }
+  })
 }
 
 }

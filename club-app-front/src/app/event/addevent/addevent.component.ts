@@ -1,3 +1,4 @@
+import { BuiltinMethod } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,6 +14,9 @@ import { EventserviceService } from 'src/app/shared/eventservice.service';
 export class AddeventComponent implements OnInit {
   
  E:evenement=new evenement();
+ style1="black"
+ style2="30px"
+ 
 
   constructor(private event :EventserviceService,private route:Router) { }
   add(){

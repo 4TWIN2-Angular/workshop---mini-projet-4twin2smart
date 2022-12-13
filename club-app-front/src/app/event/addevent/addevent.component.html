@@ -1,7 +1,19 @@
 
 <!--(avec le ng style--> 
-<p class="ajout">Ajouter un Evenement </p>
+<p class="text-center pt-2" [ngStyle]="{'color':style1,'font-size':style2}">Ajouter un Evenement </p>
 
+<section>
+  <div class="container-fluid">
+    <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item">
+        <span class="page-link"[routerLink]="['/listevent']">Previous</span>
+      </li>
+      </ul>
+    
+  
+ 
+  
 <form #f="ngForm"  (ngSubmit)="ajouter_event()" >
   <div class="input-group mb-3">
     <span class="input-group-text" id="inputGroup-sizing-default">Id evenement</span>
@@ -52,12 +64,15 @@
           </div>
         </div>
       </div> 
-   
-
-  <div class="col-12">
-    <input class="btn btn-primary" type="submit" value="ajouter"/>
+   <div class="col-12">
+    <input class="btn btn-primary" type="submit" value="ajouter" [disabled]="f?.invalid"/>
   </div>
+
   
+
+
+ 
+ 
 
    
 </form>

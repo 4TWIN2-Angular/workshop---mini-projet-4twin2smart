@@ -1,0 +1,78 @@
+ 
+ <div class="row">
+    <div class="col-12 col-xl-8">
+       <div class="card card-body border-0 shadow mb-4">
+          <h2 class="h5 mb-4">Modifier les coordonées de l'university</h2>
+          <form class="form-group" (ngSubmit)="UpdateUniversity()" >
+             <div class="row">
+ 
+                
+                <div class="col-md-6 mb-3">
+                   <div><label for="UnivName"> Nom de l'universite </label> <input class="form-control"  type="text" placeholder="university name"  name="UnivName" ></div>
+                </div>
+             </div>
+             
+ 
+                <div class="col-md-6 mb-3">
+                   <div class="form-group"><label for="emailUniv">Email</label> 
+                      <input class="form-control"  type="emailUniv" placeholder="Universityname@gmail.com" name="emailUniv" ></div>
+                </div>
+                <div *ngIf="myForm.get('emailUniv').invalid && myForm.get('emailUniv').touched">
+                   <div *ngIf="myForm.get('emailUniv').errors['required']" class="alert alert-danger" role="alert">
+                     Email est Obligatoire !
+                   </div>
+                  <div *ngIf="myForm.get('emailUniv').errors['pattern']" class="alert alert-danger" role="alert">
+                    la forme de votre email doit etre "xxxxx@gmail.com"
+                  </div>
+                  </div>
+ 
+                <div class="col-md-6 mb-3">
+                   <div class="form-group"><label for="PhoneUniv">Numero de telephone</label>
+                       <input class="form-control" id="PhoneUniv" type="number" placeholder="+216 71453624 " name="PhoneUniv" ></div>
+                </div>
+                <div *ngIf="myForm.get('PhoneUniv').errors['minLength']" class="alert alert-danger" role="alert">
+                   le numéro de téléphone doit étre 8 numéro
+ 
+                </div>
+                   <div *ngIf="myForm.get('PhoneUniv').errors['maxLength']" class="alert alert-danger" role="alert" >
+                      le numéro de téléphone doit étre 8 numéro
+ 
+                   </div>
+                
+                
+                <div *ngIf="myForm.get('PhoneUniv').errors['pattern']" class="alert alert-danger" role="alert">
+                   le numéro de téléphone doit étre 8 numéro
+                 </div>
+            
+               
+                <div class="col-sm-4 mb-3">
+                   <label class="my-1 me-2" for="categorieUniv">Categorie</label> 
+                   <select class="form-select" id="categorieUniv" aria-label="Default select example">
+                      <option selected="selected">Etatique</option>
+                      <option value="1">Privé</option>
+                      <option value="2">...</option>
+                   </select>
+                </div>
+                <div *ngIf="myForm.get('categorieUniv').invalid && myForm.get('categorieUniv').touched">
+                   <div *ngIf="myForm.get('categorieUniv').errors['required']" class="alert alert-danger" role="alert">
+                     categorie est Obligatoire !
+                   </div>
+                  </div>
+       
+                </form>
+             </div>  
+            
+        
+                  <!--addmembre-->
+                  <div class="col-lg-4">
+                     <button type="button" class="btn btn-block btn-gray-800 mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Save</button>
+                     <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h2 class="h6 modal-title">Comfirmation</h2>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                        
+ 
+ 

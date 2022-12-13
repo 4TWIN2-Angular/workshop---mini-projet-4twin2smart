@@ -1,0 +1,39 @@
+
+
+<h1 class="text-center pt-2">Liste Evenements</h1>
+<div class="container-fluid">
+  <div>
+  
+  </div>
+<table class="table table-striped " >
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">id_E</th>
+            <th scope="col">nomEvent</th>
+            <th scope="col">date_debut_Event</th>
+            <th scope="col">date_fin_Event</th>
+            <th scope="col">Description</th>
+             
+            
+
+            <th scope="col" class="w-25"> <span class="ms-3">Action</span></th>
+        </tr>
+      </thead>
+    <tbody>
+    <tr *ngFor="let event of listEvent ">
+        <td>{{event.id_E}}</td>
+        <td>{{event.nomEvent}}</td>
+        <td>{{event.date_debut_Event}}</td>
+        <td>{{event.date_fin_Event}}</td>
+        <td>{{event.description}}</td>  
+      
+      
+         
+     <div class="btn-group "role="group" aria-label="Basic example" >
+      
+        <td><button type="submit" class="btn btn-warning me-2" (click)="updateevent(event.id_E)" >modifier</button></td>
+        <td><button type="submit" class="btn btn-danger me-2" (click)="deleteevent(event.id_E)">Supprimer</button></td>
+    </div>  
+    </tr>
+</tbody>
+</table>

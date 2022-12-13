@@ -14,24 +14,61 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component';
+import { ClubComponent } from './club/club.component';
+import { EventComponent } from './event/event.component';
 
+
+
+import { AddeventComponent } from './event/addevent/addevent.component';
+import { EventupdateComponent } from './event/eventupdate/eventupdate.component';
+import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
+
+
+import { UniversityComponent } from './university/university.component';
+import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
+import { UpdateUniversityComponent } from './university/update-university/update-university.component';
+import { ListUniversityModule } from './university/list-university/list-university.module';
+import{SimpleNotificationsModule} from 'angular2-notifications'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
+import { DetailsUniversityComponent } from './university/details-university/details-university.component';
+import { listUniversityComponent } from './university/list-university/list-university.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
+    SponsorComponent,
     MembreComponent,
     SponsorComponent,
+    TablemembreComponent,
+    AddmembreComponent,
+    PipemembrePipe,
+    SponsorComponent,
+    EventComponent,
+    AddeventComponent,
+    EventupdateComponent,
+    EventdeleteComponent,
+    UniversityComponent,
+    AddUniversityComponent,
+    UpdateUniversityComponent,
+    DeletUniversityComponent,
+    DetailsUniversityComponent,
+    
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule,
+    ListUniversityModule
+
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })

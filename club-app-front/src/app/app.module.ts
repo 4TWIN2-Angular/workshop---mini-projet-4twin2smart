@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MembreComponent } from './membre/membre.component';
 import { TablemembreComponent } from './membre/tablemembre/tablemembre.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
@@ -23,10 +23,13 @@ import { EventupdateComponent } from './event/eventupdate/eventupdate.component'
 import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { UniversityComponent } from './university/university.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
+import { ToastrModule } from 'ngx-toastr';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,7 @@ import { UpdateUniversityComponent } from './university/update-university/update
     EventdeleteComponent,
     UniversityComponent,
     AddUniversityComponent,
-    UpdateUniversityComponent
+    UpdateUniversityComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,13 @@ import { UpdateUniversityComponent } from './university/update-university/update
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ],
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

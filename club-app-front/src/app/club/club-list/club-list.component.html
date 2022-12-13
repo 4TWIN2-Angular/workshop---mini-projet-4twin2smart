@@ -1,73 +1,44 @@
-
-<!--endsearch-->
-<!--header of tables-->
-
-<div class="py-4">
-   <div class="d-flex justify-content-between w-100 flex-wrap">
-      <div class="mb-3 mb-lg-0">
-         <h1 class="h4">List des Clubs</h1>
-         <p class="mb-0"></p>
-      </div>
-
-   </div>
-</div>
-<div class="d-flex justify-content-end">
-   <form>
-      <input type="text" class="form-control" [(ngModel)]="SearchedClub" name="saech" placeholder="search" />
-   </form>
-   <div>
-      <a routerLink="/club/addClub" class="btn btn-outline-success px-2 mx-2">Add</a>
-   </div>
-   
-</div>&nbsp;
-&nbsp;
-
-<div class="card border-0 shadow mb-4">
+<div class="card m-2 " style="width: 18rem;"
+   *ngIf="club.nomdeclub==SearchedClub || SearchedClub=='' || SearchedClub==null">
    <div class="card-body">
-      <div class="table-responsive">
-         <table class="table table-centered table-nowrap mb-0 rounded table-responsive" #tablemchhoua>
-            <thead class="thead-light">
-               <tr>
-                  <th class="border-0">Nom de Club</th>
-                  <th class="border-0">Specialité</th>
-                  <th class="border-0">Date de Création</th>
-                  <th class="border-0">description</th>
+      <h5 class="card-title" >
+         {{club.nomdeclub}}</h5>
+      <div class="card-text p-2">
+         <div class="d-flex">
+            Specialité :
+            <strong [ngClass]="getTextcolorspecialite(club.specialite)">{{club.specialite}}
+            </strong>
 
-               </tr>
-            </thead>
-            <tbody *ngFor="let club of listeclubs ;let i = index">
+         </div>
 
-               <tr *ngIf="club.nomdeclub==SearchedClub || SearchedClub=='' || SearchedClub==null">
-                  <td>
+         <div class=" d-inline-block text-truncate" style="max-width: 250px;">Description : {{club.description}}
+         </div>
+         <div class="d-flex"> Date de Creation : {{club.date_creation | date}}</div>
 
-                     <div class="py-2">{{club.nomdeclub}}</div>
-                  </td>
-                  
-                  <td>
-                     <div class="py-2">{{club.specialite}}</div>
-                  </td>
-                  <td>
-                     <div class="py-2">{{club.date_creation}}</div>
-                  </td>
-                  <td>
-                     <div class="py-2">{{club.description}}</div>
-                  </td>
-                  <td>
-                     <button class="btn btn-outline-danger" type="button"
-                        (click)="DeleteClub(club.id_club,i)">Delete</button>
-                     <button class="btn btn-outline-info px-2 mx-2" type="button"
-                        routerLink="/club/updateClub/{{club.id_club}}">Update</button>      
-                  </td>
-
-               </tr>
-
-
-
-            </tbody>
-         </table>
-
+      </div>
+      <div class="d-flex justify-content-around m-2">
+         <button type="button" class="btn btn-outline-dark"
+            routerLink="/club/updateClub/{{club.id_club}}">Update</button>
+         <button type="button" class="btn btn-outline-danger" (click)="notifyDelete()">Delete</button>
       </div>
    </div>
 </div>
 
 
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            Are you sure to remove {{club.id_club}} ?
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" (click)="notifyDelete()">Delete</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div> -->

@@ -6,8 +6,8 @@ import { ClubComponent } from './club.component';
 import { ClubAddComponent } from './club-add/club-add.component';
 import { ClubListComponent } from './club-list/club-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DetailclubComponent } from './detailclub/detailclub.component';
-import { ClubInputComponent } from './club-input/club-input.component';
+import { ParentListComponent } from './parent-list/parent-list.component';
+
 
 
 
@@ -16,8 +16,7 @@ import { ClubInputComponent } from './club-input/club-input.component';
     ClubComponent,
     ClubAddComponent,
     ClubListComponent,
-    DetailclubComponent,
-    ClubInputComponent
+    ParentListComponent
   ],
   imports: [
     CommonModule,

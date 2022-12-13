@@ -13,18 +13,18 @@ export class UniversityServiceService {
   constructor(private httpuniversity:HttpClient) { }
 
 
-  //getallUniversities():Observable<university[]>{
-   // return this.httpuniversity.get<university[]>(this.UnivUrl+'all')
+  getallUniversities():Observable<university[]>{
+    return this.httpuniversity.get<university[]>(this.UnivUrl+'all')
 
-  //}
-  //getnomclubs():Observable<String[]>{
-    //return this.httpuniversity.get<String[]>(this.UnivUrl+'NameUniv')
-//   }
-//   addmembre(university:university,nomuniversity:String):Observable<any>{
-//       return this.httpuniversity.post<any>(this.UnivUrl+'save'+'/',university)
-//   }
-//   deletemembre(id:number):Observable<String>{
-//     return this.httpuniversity.delete<String>(this.UnivUrl+id)
-//   }
+  }
+  getnomclubs():Observable<String[]>{
+    return this.httpuniversity.get<String[]>(this.UnivUrl+'NameUniv')
+ }
+  addmembre(university:university,nomuniversity:String):Observable<any>{
+      return this.httpuniversity.post<any>(this.UnivUrl+'save'+'/',university)
+   }
+  deletemembre(id:number):Observable<String>{
+    return this.httpuniversity.delete<String>(this.UnivUrl+id)
+  }
 
 }

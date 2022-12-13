@@ -1,0 +1,52 @@
+
+@media only screen and (max-width: 600px) {
+  .jarebni {
+    width: 70vw; 
+    height: 50vh
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) { 
+  .jarebni {
+    width: 30vw; 
+    height: 50vh;
+  }}
+
+  
+
+.jarebni{
+  position: -webkit-sticky;
+      position: fixed;
+      width: 21rem;
+   
+      
+     bottom: 10rem;
+      top: 10rem;
+    
+      
+
+
+    
+      
+    }
+    
+
+    .containers {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .centered {
+      position: absolute;
+      top: -230%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:black;
+      font-family: 'Lato';
+      
+    }
+    table {
+      border-spacing: 10px;
+    }
+
+    

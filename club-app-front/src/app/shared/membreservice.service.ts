@@ -1,7 +1,8 @@
 
-import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { HttpClient,HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Mailingcontent } from '../models/mailing';
 import { membre } from '../models/membre';
 
 
@@ -10,6 +11,8 @@ import { membre } from '../models/membre';
   providedIn: 'root'
 })
 export class MembreserviceService {
+
+
   private membreurl="http://localhost:9090/membre/"
 
   constructor(private httpmembre:HttpClient) { }
@@ -27,5 +30,19 @@ export class MembreserviceService {
   deletemembre(id:number):Observable<String>{
     return this.httpmembre.delete<String>(this.membreurl+id)
   }
+updatemembre(membre:membre):Observable<any>{
+  return this.httpmembre.put<any>(this.membreurl+'edit',membre)
+}
+retrievemembre(id:number):Observable<membre>{
+  return  this.httpmembre.get<membre>(this.membreurl+id)
+}
 
+envoyermail(mail:Mailingcontent):Observable<String>{
+return this.httpmembre.put<String>(this.membreurl+'mail',mail)
+
+}
+
+gethistory(toemail:String):Observable<Mailingcontent[]>{
+  return this.httpmembre.get<Mailingcontent[]>(this.membreurl+'history'+'/'+toemail)
+}
 }

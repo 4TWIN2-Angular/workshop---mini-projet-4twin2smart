@@ -54,6 +54,7 @@ import { UpdateUniversityComponent } from './university/update-university/update
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    
     ],
   providers: [],
   bootstrap: [AppComponent]

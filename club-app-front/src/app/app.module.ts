@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { EventComponent } from './event/event.component';
+import{SimpleNotificationsModule} from 'angular2-notifications'
 
 
 
@@ -21,7 +22,6 @@ import { AddeventComponent } from './event/addevent/addevent.component';
 import { EventupdateComponent } from './event/eventupdate/eventupdate.component';
 import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { UniversityComponent } from './university/university.component';
@@ -37,8 +37,6 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     SponsorComponent,
     MembreComponent,
-    SponsorComponent,
-    SponsorComponent,
     EventComponent,
     AddeventComponent,
     EventupdateComponent,
@@ -53,6 +51,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    SimpleNotificationsModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 4000,

@@ -20,15 +20,13 @@ const routes: Routes = [
   {path:'listmembres',component:TablemembreComponent,},
   {path:'add',component:AddmembreComponent},
   {path:'addUniv',component:AddUniversityComponent},
-  {path:'sponsor',   loadChildren: () => import('./sponsor/sponsor.module').then(m => m.SponsorModule)
-},
+  {path:'sponsor',   loadChildren: () => import('./sponsor/sponsor.module').then(m => m.SponsorModule)},
 
 {path: '', redirectTo:'Dashbord' , pathMatch:'full' },
 {path:'addUniv',component:AddUniversityComponent},
 {path:'ListUniv',component:listUniversityComponent},
 {path:'UpdateUniversity/:UnivId',component:UpdateUniversityComponent},
 {path:'DetailsUniversity/:UnivId',component:DetailsUniversityComponent},
-
   {path:'university', children:[
     {path:'DetailsUniversity/:UnivId', component: DetailsUniversityComponent},
     {path:'ListUniv',component:listUniversityComponent},

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-deletemodal',
   templateUrl: './deletemodal.component.html',
@@ -52,11 +52,7 @@ savemembre1(){
     'Done!',
     'Membre est ajotuée !',
     'success',  
-    setTimeout(() => {
-      
-    window.location.reload()
-    }, 10000),
-    
+   //splice
   )
 }
 

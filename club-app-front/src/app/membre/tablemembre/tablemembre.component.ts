@@ -55,10 +55,7 @@ export class TablemembreComponent implements OnInit {
           'Deleted!',
         'Your file has been deleted.',
           'success',
-          setTimeout(() => {
-            
-          window.location.reload()
-          }, 1000),
+          //splice 
           
         )
       }

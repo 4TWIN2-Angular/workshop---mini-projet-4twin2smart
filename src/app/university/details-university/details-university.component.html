@@ -1,23 +1,30 @@
-<h3>View Universities details</h3>
-<div>
-    <div>
-        <label><b> university Name :</b></label> {{university.nomUniv}}
-    </div>
+<div class="container-fluid m-5 p-5">
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width:35%;">
+            <div class="card-body">
+                <h5 class="card-title">University Name : {{university.nomUniv}}</h5>
+                
+                <br>
+                <h6 class="card-subtitle mb-2 text-muted"> PhoneUniv : {{university.phoneUniv}}</h6>
+                <br>
+                <h6 class="card-subtitle mb-2 text-muted"> Email University : {{university.emailUniv}}</h6>
+                <br>
+                <h6 class="card-subtitle mb-2 text-muted"> Adress university : {{university.adresseUniv}}</h6>
+                <br>
+                <h6 class="card-subtitle mb-2 text-muted"> UnivCategories : {{university.univCategories}}</h6>
+                <div class="card-text p-1">
+              
 
-    <div>
-        <label><b> university Adress :</b></label> {{university.adresseUniv}}
-    </div>
 
-    <div>
-        <label><b> university Phone number :</b></label> {{university.phoneUniv}}
-    </div>
+                    <!-- <div class="d-flex">
+                        phoneUniv : {{university.phoneUniv}}
+                        emailUniv : {{university.emailUniv}}
+                        univCategories : {{university.univCategories}}
 
-    <div>
-        <label><b> university Email :</b></label> {{university.emailUniv}}
-    </div>
-
-    <div>
-        <label><b> university categorie :</b></label> {{university.univCategories}}
+                    </div> -->
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

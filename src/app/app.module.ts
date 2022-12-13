@@ -8,15 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { AddUniversityComponent } from './university/add-university/add-university.component';
 import { UniversityComponent } from './university/university.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { ListUniversityComponent } from './university/list-university/list-university.component';
 
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
 import { DetailsUniversityComponent } from './university/details-university/details-university.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ListUniversityModule } from './university/list-university/list-university.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PipeuniversityPipe } from './university/pipeuniversity.pipe';
+
 
 
 @NgModule({
@@ -25,22 +25,29 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    AddUniversityComponent,
     UniversityComponent,
-    //ListUniversityComponent,
-  
+    ListUniversityComponent,
     UpdateUniversityComponent,
     DeletUniversityComponent,
     DetailsUniversityComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ListUniversityComponent,
+    AddUniversityComponent,
+    PipeuniversityPipe
+    
+    
+    //ListUniversityComponent,
+  
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    ListUniversityModule
+    ReactiveFormsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators, FormsModule
 import { university } from 'src/app/models/University';
 import { Component, OnInit } from '@angular/core';
 import { University } from '../university';
+import Swal from 'sweetalert2';
 import { Router ,ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -12,13 +13,17 @@ import { Router ,ActivatedRoute} from '@angular/router';
   styleUrls: ['./add-university.component.css']
 })
 export class AddUniversityComponent implements OnInit {
- 
+  tet(){
+    
+  }
   univ :University;
-  myForm :  FormGroup;
+  myForm : FormGroup;
   idUniv : Number;
   //University =new this.University;
   universityService: UniversityServiceService;
   editmode: boolean;
+
+  titleclass="titleUniv";
   
  
  
@@ -110,6 +115,13 @@ export class AddUniversityComponent implements OnInit {
              next: () => {
                console.log('University :' + this.univ)
                this.router.navigate(['/ListUniv'])
+               Swal.fire({
+      
+                icon: 'success',
+                title: 'Your University has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
              }
            })
          }

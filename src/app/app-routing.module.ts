@@ -14,20 +14,20 @@ import { ListUniversityModule } from './university/list-university/list-universi
 
 const routes: Routes = [
   {path: '', redirectTo:'Dashbord' , pathMatch:'full' },
+  
   {path:'addUniv',component:AddUniversityComponent},
   {path:'ListUniv',component:ListUniversityComponent},
   
-  {path:'UpdateUniversity/:UnivId',component:UpdateUniversityComponent},
-  {path:'DetailsUniversity/:UnivId',component:DetailsUniversityComponent},
+  {path:'UpdateUniversity/:idUniv',component:UpdateUniversityComponent},
+  {path:'DetailsUniversity/:idUniv',component:DetailsUniversityComponent},
 
   {path:'university', children:[
-    {path:'DetailsUniversity/:UnivId', component: DetailsUniversityComponent},
+    {path:'DetailsUniversity/:idUniv', component: DetailsUniversityComponent},
     {path:'ListUniv',component:ListUniversityComponent},
   ]
   },
   
-
- // {path:'listuniversity',   loadChildren: () => import('./listuniversity/ListUniversity.Module').then(u => u.University)}
+  {path:'listuniversity',   loadChildren: () => import('./university/list-university/list-university.module').then(u => u.ListUniversityModule)}
 ];
   
 @NgModule({

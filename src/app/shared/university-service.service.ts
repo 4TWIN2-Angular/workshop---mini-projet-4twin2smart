@@ -34,8 +34,8 @@ export class UniversityServiceService {
 
   }
 
-  deleteUniversite(UnivId: number ): Observable<University>{
-    return this.httpuniversity.delete<University> (`${this.UnivUrl}/${UnivId}`);
+  deleteUniversite(UnivId: number ): Observable<String> {
+    return this.httpuniversity.delete<String> (`${this.UnivUrl}/${UnivId}`);
   }
 
 }

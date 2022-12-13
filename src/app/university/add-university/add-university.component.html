@@ -442,15 +442,15 @@
 <div class="row">
    <div class="col-12 col-xl-8">
       <div class="card card-body border-0 shadow mb-4">
-         <h2 class="h5 mb-4">Add university </h2>
+         <h2 class="h5 mb-4" [ngClass]="'titleUniv'" >Add university </h2>
          <form class="form-group" [formGroup]="myForm" (ngSubmit)="submit()">
             <div class="row">
                <div class="col-md-6 mb-3">
                   <div><label for="name">University Name</label> <input class="form-control " type="text"
-                        placeholder="Enter University name" id="nomUniv" formControlName="nomUniv">
+                        placeholder="Enter University name" id="nomUniv" formControlName="nomUniv" [ngClass]="{'is-valid':myForm.get('nomUniv').valid, 'is-invalid':myForm.get('nomUniv').invalid}">
 
                   </div>
-                  <div class="alert alert-danger"
+                  <div class="alert alert-danger" 
                      *ngIf="!myForm.get('nomUniv')?.valid && myForm.get('nomUniv')?.touched">
                      <div *ngIf="myForm.get('nomUniv')?.errors?.['required']">this field is required !</div>
                      <div *ngIf="myForm.get('nomUniv')?.errors?.['minlength']">minlength = 3 !</div>
@@ -460,7 +460,7 @@
 
                <div class="col-md-6 mb-3">
                   <div><label for="name">University address  </label> <input class="form-control " type="text"
-                        placeholder="Enter university Address" id="" formControlName="adresseUniv">
+                        placeholder="Enter university Address" id="adresseUniv" formControlName="adresseUniv" [ngClass]="{'is-valid':myForm.get('adresseUniv').valid, 'is-invalid':myForm.get('adresseUniv').invalid}">
 
                   </div>
                   <div class="alert alert-danger"
@@ -471,11 +471,11 @@
 
 
                <div class="col-md-6 mb-3">
-                  <div><label for="name">University email</label> <input class="form-control " type="text"
-                        placeholder="xxx@gmail.com" id="emailUniv" formControlName="emailUniv">
+                  <div><label  for="staticEmail" >University email</label> <input class="form-control " type="text"
+                        placeholder="xxx@gmail.com" id="emailUniv" formControlName="emailUniv" [ngClass]="{'is-valid':myForm.get('emailUniv').valid, 'is-invalid':myForm.get('emailUniv').invalid}">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
-                  <div class="alert alert-danger"  *ngIf="!myForm.get('emailUniv')?.valid && myForm.get('emailUniv')?.touched">
+                  <div class="alert alert-danger" value="email@example.com" *ngIf="!myForm.get('emailUniv')?.valid && myForm.get('emailUniv')?.touched">
                      <div *ngIf="myForm.get('emailUniv')?.errors?.['required']" class="alert alert-danger" role="alert">this field is required !</div>
                      <div *ngIf="myForm.get('emailUniv')?.errors?.['pattern']" class="alert alert-danger" role="alert"> la forme de votre email doit etre "xxxxx@gmail.com"</div>
                   </div>
@@ -483,7 +483,7 @@
 
                <div class="col-md-6 mb-3">
                   <div><label for="name">University phone number</label> <input class="form-control " type="text"
-                        placeholder="71 456 345" id="phoneUniv" formControlName="phoneUniv">
+                        placeholder="71 456 345" id="phoneUniv" formControlName="phoneUniv" [ngClass]="{'is-valid':myForm.get('phoneUniv').valid, 'is-invalid':myForm.get('phoneUniv').invalid}">
                         </div>
                   <div class="alert alert-danger"
                      *ngIf="!myForm.get('phoneUniv')?.valid && myForm.get('phoneUniv')?.touched">
@@ -500,7 +500,7 @@
               
                <label class="my-1 me-2" for="categorieUniv">Categorie</label> 
             
-               <select class="form-select" id="univCategories" aria-label="Default select example" formControlName="univCategories">
+               <select class="form-select" id="univCategories" aria-label="Default select example" formControlName="univCategories" [ngClass]="{'is-valid':myForm.get('univCategories').valid, 'is-invalid':myForm.get('univCategories').invalid}">
                   <option value="0" selected="selected">Prive</option>
                   <option value="1">Etatique</option>
                  
@@ -514,7 +514,7 @@
 
             <div class="col-md-6 mb-3">
                <div>Date de Creation <input class="form-control" id="Date" type="date" placeholder="date de création"
-                     id="date_creation" formControlName="date_creation"></div>
+                     id="date_creation" formControlName="date_creation" ></div>
                      <div class="alert alert-danger" *ngIf="!myForm.get('date_creation')?.valid && myForm.get('date_creation')?.touched">
                         <div *ngIf="myForm.get('date_creation')?.errors?.['required']">this field is required !</div>
                       </div>
@@ -527,5 +527,6 @@
          </form>
       </div>
       <hr>
-
+      
+<button (click)="tet()">test me</button>
 

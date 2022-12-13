@@ -1,0 +1,31 @@
+.section-title {
+    font-size: 36px;
+    color: #212121;
+    line-height: 52px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  /* .section-title:before {
+    position: absolute;
+    content: '';
+    left: 15px;
+    bottom: 8px;
+    width: 48px;
+    height: 1px;
+    background-color: #5f2684;
+  }
+  
+  .section-title:after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    bottom: 2px;
+    width: 48px;
+    height: 1px;
+    background-color: #5f2684;
+  } */

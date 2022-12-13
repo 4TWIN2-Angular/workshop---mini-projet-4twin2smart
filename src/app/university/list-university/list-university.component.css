@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400|Josefin+Sans:700");
+/* 
+   .titre h1 {
+        font-size: 60px;
+        font-weight: 500;
+        counter-increment: initial;
+        background-image: linear-gradient(to left, #d9054f, #8e0430);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+      } */
+
+
+      .section-title {
+        font-size: 36px;
+        font-family: 'Josefin Sans', sans-serif ;
+        color: #d53e3e;
+        line-height: 52px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 15px;
+      }
+      
+      /* .section-title:before {
+        position: absolute;
+        content: '';
+        left: 15px;
+        bottom: 8px;
+        width: 48px;
+        height: 1px;
+        background-color: #5f2684;
+      } */
+      
+      /* .section-title:after {
+        position: absolute;
+        content: '';
+        left: 0px;
+        bottom: 2px;
+        width: 48px;
+        height: 1px;
+        background-color: #5f2684;
+      } */

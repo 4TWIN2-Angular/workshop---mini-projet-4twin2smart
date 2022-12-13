@@ -13,7 +13,6 @@ import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
-import { ClubComponent } from './club/club.component';
 import { EventComponent } from './event/event.component';
 
 
@@ -29,7 +28,11 @@ import { UniversityComponent } from './university/university.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { ToastrModule } from 'ngx-toastr';
+<<<<<<< HEAD
 import { OrderModule } from 'ngx-order-pipe';
+=======
+
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
 
 @NgModule({
   declarations: [

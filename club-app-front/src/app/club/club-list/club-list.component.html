@@ -1,8 +1,12 @@
 <div class="card m-2 " style="width: 18rem;"
    *ngIf="club.nomdeclub==SearchedClub || SearchedClub=='' || SearchedClub==null">
    <div class="card-body">
+<<<<<<< HEAD
       <h5 class="card-title" >
          {{club.nomdeclub}}</h5>
+=======
+      <h5 class="card-title">{{club.nomdeclub}}</h5>
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
       <div class="card-text p-2">
          <div class="d-flex">
             Specialité :
@@ -14,6 +18,16 @@
          <div class=" d-inline-block text-truncate" style="max-width: 250px;">Description : {{club.description}}
          </div>
          <div class="d-flex"> Date de Creation : {{club.date_creation | date}}</div>
+<<<<<<< HEAD
+=======
+
+      </div>
+      <div class="d-flex justify-content-around m-2">
+         <button type="button" class="btn btn-outline-dark"
+            routerLink="/club/updateClub/{{club.id_club}}">Update</button>
+         <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            class="btn btn-outline-danger">Delete</button>
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
 
       </div>
       <div class="d-flex justify-content-around m-2">
@@ -25,7 +39,12 @@
 </div>
 
 
+<<<<<<< HEAD
 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+=======
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
@@ -33,7 +52,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div class="modal-body">
+<<<<<<< HEAD
             Are you sure to remove {{club.id_club}} ?
+=======
+            Are you sure to remove {{club.nomdeclub}} ?
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" (click)="notifyDelete()">Delete</button>
@@ -41,4 +64,8 @@
          </div>
       </div>
    </div>
+<<<<<<< HEAD
 </div> -->
+=======
+</div>
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8

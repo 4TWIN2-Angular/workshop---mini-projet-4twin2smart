@@ -27,6 +27,10 @@ export class ClubListComponent implements OnInit {
 
   notifyDelete() {
     this.notification.emit(this.club)
+<<<<<<< HEAD
+=======
+    this.toastr.success('club deleted with success', 'Success');
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
 
   }
   

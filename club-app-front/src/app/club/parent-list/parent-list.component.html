@@ -2,7 +2,11 @@
 <div class="py-4">
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
+<<<<<<< HEAD
             <h1 class="h4"><div [ngStyle]="{'font-style':'italic', 'color':'Brown', 'font-weight': 'bolder'}">List des Clubs</div></h1>
+=======
+            <h1 class="h4"><div [ngStyle]="{'font-style':'italic', 'color':'olive', 'font-weight': 'bolder'}">List des Clubs</div></h1>
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
             <p class="mb-0"></p>
         </div>
 
@@ -19,7 +23,12 @@
 </div>
 
 <div class="d-flex m-3" style="overflow-x:scroll; white-space: nowrap;">
+<<<<<<< HEAD
     <app-club-list *ngFor="let c of listeclubs; let i=index" [SearchedClub]="SearchedClub" [club]="c" (notification)="DeleteClub($event,i)">
+=======
+    <app-club-list *ngFor="let c of listeclubs; let i=index" [SearchedClub]="SearchedClub" [club]="c"
+        (notification)="DeleteClub($event,i)">
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
     </app-club-list>
 </div>
 

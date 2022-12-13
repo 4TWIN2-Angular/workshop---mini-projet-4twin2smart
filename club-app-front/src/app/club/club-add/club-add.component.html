@@ -149,7 +149,11 @@
             </div>
             <div class="col-md-6 mb-3">
                <label>Specialité</label>
+<<<<<<< HEAD
                <select class="form-select" id="specialite" formControlName="specialite" placeholder="Specialité" >
+=======
+               <select class="form-select" id="specialite" formControlName="specialite" placeholder="Specialité" [ngClass]="{'is-valid':form.get('specialite').valid, 'is-invalid':form.get('specialite').invalid}">
+>>>>>>> 3fd9f84017d81336e002c2ff1bab1f779c1b0de8
                   <option *ngFor="let s of specialite" [value]="s.value">{{s.value}}</option>
                </select>
                <div class="alert alert-danger"

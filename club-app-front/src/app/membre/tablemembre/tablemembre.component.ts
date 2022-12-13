@@ -18,7 +18,6 @@ export class TablemembreComponent implements OnInit {
   lawejtype:String;
   listmembres:membre[];
   jari:String;
- @Output() ajouterget = new EventEmitter 
   
   constructor(private membreservice:MembreserviceService) { }
   @Output() 

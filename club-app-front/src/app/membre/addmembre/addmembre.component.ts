@@ -74,7 +74,6 @@ export class AddmembreComponent implements OnInit {
    
    // this.updatemembre.reset();
    console.log(this.membre2);
-   this.membres.updatemembre(this.membre2).subscribe();
    
    Swal.fire({
     title: 'Do you want to save the changes?',
@@ -85,6 +84,8 @@ export class AddmembreComponent implements OnInit {
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
+      this.route.navigate['../listmembres']
+
       Swal.fire({
         icon: 'success',
         title: 'Your work has been saved',
@@ -92,7 +93,12 @@ export class AddmembreComponent implements OnInit {
         timer: 1500,
         
       }
+      
       )
+      this.membres.updatemembre(this.membre2).subscribe(()=>{console.log('rani nemchi'),this.route.navigate(['/listmembres'])}
+      );
+      
+
 
      
       

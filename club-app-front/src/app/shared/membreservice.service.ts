@@ -1,5 +1,6 @@
 
 import { HttpClient,HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { Text } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Mailingcontent } from '../models/mailing';
@@ -30,8 +31,8 @@ export class MembreserviceService {
   deletemembre(id:number):Observable<String>{
     return this.httpmembre.delete<String>(this.membreurl+id)
   }
-updatemembre(membre:membre):Observable<any>{
-  return this.httpmembre.put<any>(this.membreurl+'edit',membre)
+updatemembre(membre:membre){
+  return this.httpmembre.put(this.membreurl+'edit',membre ,{responseType:'text'})
 }
 retrievemembre(id:number):Observable<membre>{
   return  this.httpmembre.get<membre>(this.membreurl+id)

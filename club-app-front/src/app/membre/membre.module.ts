@@ -33,7 +33,8 @@ import { TestComponent } from './test/test.component';
     MembreRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
    
     
   ]

@@ -1,4 +1,4 @@
-import { Component, Inject, Injector, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, SimpleChanges ,Output} from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -11,6 +11,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./deletemodal.component.css']
 })
 export class DeletemodalComponent implements OnInit {
+
+
+  
+
   membre=new membre();
  
   nomdeclubs:String[];
@@ -37,9 +41,7 @@ constructor(private members:MembreserviceService,private rout:Router) {
     console.log(membre)
 
   }
-  heznilmembre(){
-      this.rout.navigate['membre/listemembres']
-  }
+  
   addmemb(){
     console.log(this.membre)
   }
@@ -60,7 +62,8 @@ savemembre(){
     
  
   console.log(this.membre);
-  this.members.addmembre(this.membre,this.clubassignedto).subscribe(data=>{console.log(data)
+  this.members.addmembre(this.membre,this.clubassignedto).subscribe(data=>{console.log(data),
+    this.rout.navigate(['/listmembres'])
     
   
   }

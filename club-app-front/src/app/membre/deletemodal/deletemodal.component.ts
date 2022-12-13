@@ -71,9 +71,6 @@ savemembre(){
  
  this.clubassignedto="";
  
- window.close()
-
- window.location.reload()
 
 }
 // j(){

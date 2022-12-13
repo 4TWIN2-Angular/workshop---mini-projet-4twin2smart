@@ -3,14 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClubAddComponent } from './club-add/club-add.component';
 import { ClubListComponent } from './club-list/club-list.component';
 import { ClubComponent } from './club.component';
-import { DetailclubComponent } from './detailclub/detailclub.component';
+import { ParentListComponent } from './parent-list/parent-list.component';
 
 const routes: Routes = [{ path: '', component: ClubComponent,children:[
   
     { path: 'addClub', component: ClubAddComponent },
     { path: 'updateClub/:id', component: ClubAddComponent },
-    { path: 'listClub', component: ClubListComponent},
-    { path: 'detailClub', component: DetailclubComponent },
+    { path: 'listClub', component: ParentListComponent},
 ]
 }
 ];

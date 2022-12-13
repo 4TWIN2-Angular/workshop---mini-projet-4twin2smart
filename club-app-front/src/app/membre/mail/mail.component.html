@@ -1,0 +1,65 @@
+
+ 
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Sending an Email</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <div class="formbold-form-wrapper">
+            <form action="https://formbold.com/s/FORM_ID" method="POST">
+              
+        
+              <div class="formbold-mb-5">
+                <label for="email" class="formbold-form-label"> Email Address </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  class="formbold-form-input"
+                  [(ngModel)]="mailer.toEmail"
+                />
+              </div>
+        
+              <div class="formbold-mb-5">
+                <label for="subject" class="formbold-form-label"> Subject </label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="Enter your subject"
+                  class="formbold-form-input"
+                  [(ngModel)]="mailer.subject"
+
+                />
+              </div>
+        
+              <div class="formbold-mb-5">
+                <label for="message" class="formbold-form-label"> Message </label>
+                <textarea
+                  rows="6"
+                  name="message"
+                  id="message"
+                  placeholder="Type your message"
+                  class="formbold-form-input"
+                  [(ngModel)]="mailer.body"
+
+                ></textarea>
+              </div>
+        
+              <div> 
+               <!--data-bs-dismiss="modal"-->
+                <button class="formbold-btn" (click)="sendmail()" data-bs-dismiss="modal">Submit</button>
+
+              </div>
+            </form>
+          </div>
+       </div>
+       
+     </div>
+   </div>
+ </div>

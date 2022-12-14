@@ -1,22 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+
+import { UniversityServiceService } from 'src/app/shared/university-service.service'; 
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators, FormsModule, NgModel   } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { university } from 'src/app/models/university';
-import { UniversityServiceService } from 'src/app/shared/university-service.service';
+import { university } from 'src/app/models/University';
+import { Component, OnInit } from '@angular/core';
 import { University } from '../university';
+import Swal from 'sweetalert2';
+import { Router ,ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-adduniversity',
-  templateUrl: './adduniversity.component.html',
-  styleUrls: ['./adduniversity.component.css']
+  selector: 'app-add-university',
+  templateUrl: './add-university.component.html',
+  styleUrls: ['./add-university.component.css']
 })
 export class AddUniversityComponent implements OnInit {
+  tet(){
+    
+  }
   univ :University;
-  myForm :  FormGroup;
+  myForm : FormGroup;
   idUniv : Number;
   //University =new this.University;
   universityService: UniversityServiceService;
   editmode: boolean;
+
+  titleclass="titleUniv";
   
  
  
@@ -108,6 +115,13 @@ export class AddUniversityComponent implements OnInit {
              next: () => {
                console.log('University :' + this.univ)
                this.router.navigate(['/ListUniv'])
+               Swal.fire({
+      
+                icon: 'success',
+                title: 'Your University has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
              }
            })
          }
@@ -115,4 +129,3 @@ export class AddUniversityComponent implements OnInit {
 
           
       }
-

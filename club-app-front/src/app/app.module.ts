@@ -24,10 +24,16 @@ import { EventdeleteComponent } from './event/eventdelete/eventdelete.component'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { UniversityComponent } from './university/university.component';
-import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
-import { UpdateUniversityComponent } from './university/update-university/update-university.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AddUniversityComponent } from './university/add-university/add-university.component';
+import { UniversityComponent } from './university/university.component';
+import { ListUniversityComponent } from './university/list-university/list-university.component';
+
+import { UpdateUniversityComponent } from './university/update-university/update-university.component';
+import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
+import { DetailsUniversityComponent } from './university/details-university/details-university.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PipeuniversityPipe } from './university/pipeuniversity.pipe';
 
 @NgModule({
   declarations: [
@@ -42,8 +48,15 @@ import { ToastrModule } from 'ngx-toastr';
     EventupdateComponent,
     EventdeleteComponent,
     UniversityComponent,
+    ListUniversityComponent,
+    UpdateUniversityComponent,
+    DeletUniversityComponent,
+    DetailsUniversityComponent,
+    PageNotFoundComponent,
+    ListUniversityComponent,
     AddUniversityComponent,
-    UpdateUniversityComponent
+    PipeuniversityPipe
+  
   ],
   imports: [
     BrowserModule,

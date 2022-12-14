@@ -1,0 +1,18 @@
+
+.main-content{
+    margin:  -21px !important;
+  
+  }
+  .section-title {
+    font-size: 36px;
+    font-family: 'Josefin Sans', sans-serif ;
+    color: #d53e3e;
+    line-height: 52px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 15px;
+  }

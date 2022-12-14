@@ -15,3 +15,4 @@ export class UniversityComponent implements OnInit {
   }
 
 }
+ 

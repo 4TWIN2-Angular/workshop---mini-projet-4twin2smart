@@ -1,5 +1,34 @@
-<h2>University list</h2>
+<div class="titre">
+<h1 class="section-title">University list</h1>
+</div>
+<!-- <div>
+ <button type="button" class="btn btn-primary position-relative d-grid gap-2 d-md-flex justify-content-md-end float-end" >
+    Inbox
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ">
+      99+
+      <span class="visually-hidden">unread messages</span>
+    </span>
+  </button> 
+</div>
+<br>
+<br> -->
+<div>
+    <!-- <input type="text" name="" id="" [(ngModel)]="sear"> -->
+    <div class="d-flex align-items-center"></div>
+    <form class="d-flex" role="search">
+        <span class="input-group-text" id="topbar-addon">
+            <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+               <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+         </span>
+             
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" aria-describedby="topbar-addon" name="search" id="search" [(ngModel)]="sear">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+</div>
+<br>
 <table class="table table-striped">
+   
     <thead>
         <tr>
             <th>University ID</th>
@@ -12,8 +41,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor= "let university of universities">
-            <td> {{university.idUniv}}</td>
+        <tr *ngFor="let university of universities|pipeuniversity:sear;let i= index">
+            <td> {{i+1}}</td>
             <td> {{university.nomUniv}}</td>
             <td> {{university.emailUniv}}</td>
             <td> {{university.phoneUniv }}</td>
@@ -24,6 +53,7 @@
                 <button type="button" (click)= "detailsUniversite(university.idUniv)" class="btn btn-info mb-3 " style="margin-left: 10px ;"  data-bs-toggle="modal" data-bs-target="#modal-default"> Details </button>   
             </td>
 
+        
         </tr>
 
     </tbody>

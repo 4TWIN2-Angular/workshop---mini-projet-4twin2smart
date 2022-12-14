@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddUniversityComponent } from './adduniversity.component';
+import { AddUniversityComponent } from './add-university.component';
 
-describe('AdduniversityComponent', () => {
+describe('AddUniversityComponent', () => {
   let component: AddUniversityComponent;
   let fixture: ComponentFixture<AddUniversityComponent>;
 

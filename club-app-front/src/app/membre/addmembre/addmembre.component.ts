@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { membre } from 'src/app/models/membre';
 import { MembreserviceService } from 'src/app/shared/membreservice.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
@@ -39,7 +39,7 @@ export class AddmembreComponent implements OnInit {
      
   }
    
-  constructor(private membres:MembreserviceService,private rout:ActivatedRoute) { }
+  constructor(private membres:MembreserviceService,private rout:ActivatedRoute,private route:Router) { }
 
   ngOnInit(): void {
     this.createthisform()
@@ -73,7 +73,8 @@ export class AddmembreComponent implements OnInit {
     this.membre2.club=this.membre.club
    
    // this.updatemembre.reset();
-   this.membres.updatemembre(this.membre2).subscribe(data=>{})
+   console.log(this.membre2);
+   
    Swal.fire({
     title: 'Do you want to save the changes?',
     showDenyButton: true,
@@ -83,8 +84,26 @@ export class AddmembreComponent implements OnInit {
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      Swal.fire('Saved!', '', 'success')
+      this.route.navigate['../listmembres']
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500,
+        
+      }
       
+      )
+      this.membres.updatemembre(this.membre2).subscribe(()=>{console.log('rani nemchi'),this.route.navigate(['/listmembres'])}
+      );
+      
+
+
+     
+      
+     
+
     } else if (result.isDenied) {
       Swal.fire('Changes are not saved', '', 'info'),
       this.membre2= new membre();

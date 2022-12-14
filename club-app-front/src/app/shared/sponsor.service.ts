@@ -1,7 +1,7 @@
+import { Sponsor } from './../models/sponsor';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Sponsor } from '../models/sponsor';
 import { evenement as Event } from '../models/evenement';
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,12 @@ export class SponsorService {
 }
 deletesponsor(id:number):Observable<String>{
   return this.httpsponsor.delete<String>(this.sponsorurl+id)
+}
+
+retrieveSponsor(id:number):Observable<Sponsor>{
+  return  this.httpsponsor.get<Sponsor>(this.sponsorurl+id)
+}
+updateSponsor(id:number, Sponsor:Sponsor):Observable<any>{
+  return this.httpsponsor.put<any>(this.sponsorurl+'edit/'+id,Sponsor)
 }
   }

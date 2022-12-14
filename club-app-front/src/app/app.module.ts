@@ -8,14 +8,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MembreComponent } from './membre/membre.component';
 import { TablemembreComponent } from './membre/tablemembre/tablemembre.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AddmembreComponent } from './membre/addmembre/addmembre.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipemembrePipe } from './membre/pipemembre.pipe';
 import { SponsorComponent } from './sponsor/sponsor.component';
-import { DeletemodalComponent } from './membre/deletemodal/deletemodal.component';
-import { ClubComponent } from './club/club.component';
 import { EventComponent } from './event/event.component';
+import{SimpleNotificationsModule} from 'angular2-notifications'
 
 
 
@@ -23,16 +22,13 @@ import { AddeventComponent } from './event/addevent/addevent.component';
 import { EventupdateComponent } from './event/eventupdate/eventupdate.component';
 import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { UniversityComponent } from './university/university.component';
 import { AddUniversityComponent } from './university/adduniversity/adduniversity.component';
 import { UpdateUniversityComponent } from './university/update-university/update-university.component';
-import { ListUniversityModule } from './university/list-university/list-university.module';
-import{SimpleNotificationsModule} from 'angular2-notifications'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DeletUniversityComponent } from './university/delet-university/delet-university.component';
-import { DetailsUniversityComponent } from './university/details-university/details-university.component';
-import { listUniversityComponent } from './university/list-university/list-university.component';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,31 +37,28 @@ import { listUniversityComponent } from './university/list-university/list-unive
     FooterComponent,
     SponsorComponent,
     MembreComponent,
-    SponsorComponent,
-    SponsorComponent,
     EventComponent,
     AddeventComponent,
     EventupdateComponent,
     EventdeleteComponent,
     UniversityComponent,
     AddUniversityComponent,
-    UpdateUniversityComponent,
-    DeletUniversityComponent,
-    DetailsUniversityComponent,
-    
+    UpdateUniversityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,
-    ListUniversityModule
-
-  ],
- 
+    SimpleNotificationsModule.forRoot(),
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

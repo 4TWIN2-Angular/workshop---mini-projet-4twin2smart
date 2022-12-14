@@ -1,0 +1,26 @@
+
+<div class="py-4">
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+        <div class="mb-3 mb-lg-0">
+            <h1 class="h4"><div [ngStyle]="{'font-style':'italic', 'color':'darkred', 'font-weight': 'bolder'}">List des Clubs</div></h1>
+            <p class="mb-0"></p>
+        </div>
+
+    </div>
+</div>
+<div class="d-flex justify-content-start">
+    <form>
+        <input type="text" class="form-control" [(ngModel)]="SearchedClub" name="search" placeholder="search" />
+    </form>
+    <div>
+        <a routerLink="/club/addClub" class="btn btn-outline-success px-2 mx-2">Add</a>
+    </div>
+
+</div>
+
+<div class="d-flex m-3" style="overflow-x:scroll; white-space: nowrap;">
+    <app-club-list *ngFor="let c of listeclubs; let i=index" [SearchedClub]="SearchedClub" [club]="c"
+        (notification)="DeleteClub($event,i)">
+    </app-club-list>
+</div>
+

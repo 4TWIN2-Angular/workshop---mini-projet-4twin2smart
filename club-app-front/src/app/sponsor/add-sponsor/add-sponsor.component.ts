@@ -6,6 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { evenement as Event } from 'src/app/models/evenement';
 import { EventserviceService } from 'src/app/shared/eventservice.service';
 import {NotificationsService} from 'angular2-notifications'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-sponsor',
   templateUrl: './add-sponsor.component.html',
@@ -16,7 +17,7 @@ export class AddSponsorComponent implements OnInit {
 sponsor: Sponsor = new Sponsor();
 listEvent: any;
 
-  constructor(private spS:SponsorService, private event:EventserviceService, private notif:NotificationsService) { }
+  constructor(private spS:SponsorService, private event:EventserviceService, private notif:NotificationsService, private router:Router) { }
 
   ngOnInit(): void {
     this.event.get_list_event().subscribe(data=>this.listEvent=data);
@@ -58,7 +59,9 @@ save(){
     this.myForm.reset();
   }
 
-
+  
+    this.router.navigate(['/sponsor']);
+  
 
 }
   

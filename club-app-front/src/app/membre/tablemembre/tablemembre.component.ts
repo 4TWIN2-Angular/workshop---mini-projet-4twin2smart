@@ -18,7 +18,6 @@ export class TablemembreComponent implements OnInit {
   lawejtype:String;
   listmembres:membre[];
   jari:String;
- @Output() ajouterget = new EventEmitter 
   
   constructor(private membreservice:MembreserviceService) { }
   @Output() 
@@ -38,7 +37,7 @@ export class TablemembreComponent implements OnInit {
       return '#2ab7ca'
       else return '#0057e7'
   }
-  deletemembre1(id:number){
+  deletemembre1(id:number,i:number){
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -50,6 +49,7 @@ export class TablemembreComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.deletemembre(id)
+        this.listmembres.splice(i,1)
         Swal.fire(
           
           'Deleted!',
@@ -64,7 +64,8 @@ export class TablemembreComponent implements OnInit {
   deletemembre(id:number){
     console.log(id);
       this.membreservice.deletemembre(id).subscribe(data=>{console.log(data)
-      })
+      }
+      )
    
      
 

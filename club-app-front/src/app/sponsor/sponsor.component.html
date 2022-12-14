@@ -57,7 +57,7 @@
                          
                           <div class="py-2">{{sponsor.labelle}}</div>
                       </td>
-                      <td > <div class="py-2"> {{sponsor.categorieSponsor}}</div></td>
+                      <td > <div class="py-2" [ngStyle]="{'color':categoriecolor(sponsor.categorieSponsor)}"> {{sponsor.categorieSponsor}}</div></td>
                       <td > <div class="py-2" >{{sponsor.email}}</div></td>
                       <td ><div class="py-2">{{sponsor.phone}}</div></td>
                       <td>

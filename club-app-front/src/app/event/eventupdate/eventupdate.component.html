@@ -6,13 +6,7 @@
 
 <form #f="ngForm"  (ngSubmit)="Test()" >
   
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Id evenement</span>
-    <input type="text" class="form-control" name="ne"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.id_E" #id="ngModel"  required>
-  </div>
-   <div class="alert alert-danger" role="alert" *ngIf="id.errors?.['required']&& id.touched">
-    l'ajout d'un id  est Obligatoire
-  </div> 
+  
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Nom Evenement</span>
         <input type="text" class="form-control" name="ne"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.nomEvent" #NomE="ngModel"  required>
@@ -44,7 +38,7 @@
         <input type="text" class="form-control"  name="des" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.description"#description="ngModel" >
       </div>
       
-       <div class="col-12">
+       <!-- <div class="col-12">
         <div class="form-check">
           <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
           <label class="form-check-label" for="invalidCheck3">
@@ -54,7 +48,7 @@
          il faut valider avant ajouter
           </div>
         </div>
-      </div> 
+      </div>  -->
    <div class="col-12">
     <input class="btn btn-success" type="submit" value="modifier"  [disabled]="f?.invalid">
   </div>

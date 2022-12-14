@@ -1,0 +1,10 @@
+.formUni{
+    position: relative;
+    margin-left: 35%;
+    margin-top: 100px;
+    border-radius:20%;
+   
+    background-color: rgba(233, 38, 38, 0.5);
+    margin-right: 40%;
+    padding: 30px;
+}

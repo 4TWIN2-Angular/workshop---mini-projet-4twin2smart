@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { university} from '../models/university';
+import { university } from '../models/University';
 import { University } from '../university/university';
-import { UniversityComponent } from '../university/university.component';
 
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class UniversityServiceService {
   private UnivUrl="http://localhost:9090/Universite"
 
@@ -32,12 +30,13 @@ export class UniversityServiceService {
   }
 
   updateUniversity(idUniv: number, University: University) : Observable<university> {
-    return this.httpuniversity.put<University> (`${this.UnivUrl}/${idUniv}` , University);
+    // return this.httpuniversity.put<University> (`${this.UnivUrl}/${idUniv}` , University);
+    return this.httpuniversity.put<university>(this.UnivUrl+'/edit/'+idUniv,University)
 
   }
 
-  deleteUniversite(UnivId: number ): Observable<University>{
-    return this.httpuniversity.delete<University> (`${this.UnivUrl}/${UnivId}`);
+  deleteUniversite(UnivId: number ): Observable<String> {
+    return this.httpuniversity.delete<String> (`${this.UnivUrl}/${UnivId}`);
   }
 
 }

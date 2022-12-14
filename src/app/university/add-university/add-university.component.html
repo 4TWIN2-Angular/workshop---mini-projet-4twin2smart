@@ -306,10 +306,6 @@
 
 
 
-
-
-
-
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
    <div>
       <div class="dropdown">
@@ -349,7 +345,7 @@
                   </path>
                   <path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path>
                </svg>
-               Product
+               University
             </a>
             <div role="separator" class="dropdown-divider my-1"></div>
             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -396,7 +392,7 @@
                   d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
                   clip-rule="evenodd"></path>
             </svg>
-            Products
+            University
          </a>
          <a class="dropdown-item d-flex align-items-center" href="#">
             <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -405,7 +401,7 @@
                   d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z">
                </path>
             </svg>
-            Customers
+            Member
          </a>
          <a class="dropdown-item d-flex align-items-center" href="#">
             <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -414,7 +410,7 @@
                   d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
                   clip-rule="evenodd"></path>
             </svg>
-            Orders
+            Club
          </a>
          <a class="dropdown-item d-flex align-items-center" href="#">
             <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -423,7 +419,7 @@
                   d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z"
                   clip-rule="evenodd"></path>
             </svg>
-            Console
+            Event
          </a>
          <div role="separator" class="dropdown-divider my-1"></div>
          <a class="dropdown-item d-flex align-items-center" href="#">
@@ -439,10 +435,11 @@
       </div>
    </div>
 </div>
+
 <div class="row">
    <div class="col-12 col-xl-8">
       <div class="card card-body border-0 shadow mb-4">
-         <h2 class="h5 mb-4" [ngClass]="'titleUniv'" >Add university </h2>
+         <h2 class="h5 mb-4" [ngClass]="'titleUniv'" class="section-title"> Add university </h2>
          <form class="form-group" [formGroup]="myForm" (ngSubmit)="submit()">
             <div class="row">
                <div class="col-md-6 mb-3">
@@ -528,5 +525,4 @@
       </div>
       <hr>
       
-<button (click)="tet()">test me</button>
 

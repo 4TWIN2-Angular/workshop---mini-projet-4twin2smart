@@ -30,7 +30,8 @@ export class UniversityServiceService {
   }
 
   updateUniversity(idUniv: number, University: University) : Observable<university> {
-    return this.httpuniversity.put<University> (`${this.UnivUrl}/${idUniv}` , University);
+    // return this.httpuniversity.put<University> (`${this.UnivUrl}/${idUniv}` , University);
+    return this.httpuniversity.put<university>(this.UnivUrl+'/edit/'+idUniv,University)
 
   }
 

@@ -1,7 +1,9 @@
 .section-title {
     font-size: 36px;
-    color: #212121;
+    font-family: 'Josefin Sans', sans-serif ;
+    color: #d53e3e;
     line-height: 52px;
+    padding-top: 20px;
     padding-bottom: 20px;
     font-weight: 700;
     text-align: center;

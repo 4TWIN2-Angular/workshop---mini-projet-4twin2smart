@@ -55,7 +55,7 @@ export class UpdateUniversityComponent implements OnInit {
 
   onSubmit(){
     //console.log("hhhh"+this.univ)
-    this.univeresitySevice.updateUniversity(this.UnivId , this.univ ).subscribe();
+    this.univeresitySevice.updateUniversity(this.UnivId , this.univ ).subscribe(data=>console.log(data));
     this.router.navigate(['/ListUniv'])
   }
 
@@ -65,6 +65,7 @@ export class UpdateUniversityComponent implements OnInit {
     }
     
     UpdateUniversity(){
+    
          console.log(this.myForm.get("idUniv").value)
          Swal.fire({
           title: 'Do you want to save the changes?',
@@ -76,6 +77,8 @@ export class UpdateUniversityComponent implements OnInit {
         
           if (result.isConfirmed) {
             Swal.fire('Saved!', '', 'success')
+            //  this.univeresitySevice.updateUniversity(this.univ)
+            console.log("hhh",this.univ)
           } else if (result.isDenied) {
             Swal.fire('Changes are not saved', '', 'info')
           }

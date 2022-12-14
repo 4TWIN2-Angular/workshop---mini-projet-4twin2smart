@@ -13,9 +13,9 @@ import { university } from 'src/app/models/University';
 
 export class DetailsUniversityComponent implements OnInit {
 
-  @Input("nameuniv") nomUniv:any
-
   
+
+
   UnivId: number 
   university : University;
   style1='#8e0430';

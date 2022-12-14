@@ -1,78 +1,60 @@
-
-<!--(avec le ng style--> 
+<!--(avec le ng style-->
 <p class="text-center pt-2" [ngStyle]="{'color':style1,'font-size':style2}">Ajouter un Evenement </p>
 
 <section>
   <div class="container-fluid">
     <nav aria-label="...">
-    <ul class="pagination">
-      <li class="page-item">
-        <span class="page-link"[routerLink]="['/listevent']">Previous</span>
-      </li>
+      <ul class="pagination">
+        <li class="page-item">
+          <span class="page-link" [routerLink]="['/listevent']">Previous</span>
+        </li>
       </ul>
-    
-  
- 
-  
-<form #f="ngForm"  (ngSubmit)="ajouter_event()" >
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Id evenement</span>
-    <input type="text" class="form-control" name="ne"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.id_E" #id="ngModel"  required>
-  </div>
-   <div class="alert alert-danger" role="alert" *ngIf="id.errors?.['required']&& id.touched">
-    l'ajout d'un id  est Obligatoire
-  </div> 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Nom Evenement</span>
-        <input type="text" class="form-control" name="ne"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.nomEvent" #NomE="ngModel"  required>
-      </div>
-       <div class="alert alert-danger" role="alert" *ngIf="NomE.errors?.['required']&& NomE.touched">
-        l'ajout du nom d'evenement est Obligatoire
-      </div> 
-      <div class="input-group mb-3">
-        <span class="input-group-text"  id="inputGroup-sizing-default">Date debut Evenement</span>
-        <input type="text" class="form-control"  name="dd" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.date_debut_Event" #datedebutev="ngModel" required pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)">
-      </div>
-      <div class="alert alert-danger" role="alert" *ngIf="datedebutev.errors?.['pattern']">
-        date incoreecte
-      </div> 
-       <div class="alert alert-danger" role="alert"*ngIf="datedebutev.errors?.['required']">
-        l'ajout de date debut d'evenement est Obligatoire
-      </div> 
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Date fin Evenement</span>
-        <input type="text" class="form-control"   name="df" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"   [(ngModel)]="E.date_fin_Event"#datefintev="ngModel" required pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)">
-      </div>
-      <div class="alert alert-danger" role="alert" *ngIf="datefintev.errors?.['pattern']">
-        date incoreecte
-      </div>
-      
-      
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Description </span>
-        <input type="text" class="form-control"  name="des" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.description"#description="ngModel" >
-      </div>
-      
-       <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-          <label class="form-check-label" for="invalidCheck3">
-            Accepter tous les termes et les conditions 
-          </label>
-          <div id="invalidCheck3Feedback" class="invalid-feedback">
-         il faut valider avant ajouter
-          </div>
+
+
+
+
+      <form #f="ngForm" (ngSubmit)="ajouter_event()">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Nom Evenement</span>
+          <input type="text" class="form-control" name="ne" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.nomEvent" #NomE="ngModel" required>
         </div>
-      </div> 
-   <div class="col-12">
-    <input class="btn btn-primary" type="submit" value="ajouter" [disabled]="f?.invalid"/>
-  </div>
+        <div class="alert alert-danger" role="alert" *ngIf="NomE.errors?.['required']&& NomE.touched">
+          l'ajout du nom d'evenement est Obligatoire
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Date debut Evenement</span>
+          <input type="text" class="form-control" name="dd" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.date_debut_Event" #datedebutev="ngModel"
+            required
+            pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="datedebutev.errors?.['pattern']">
+          date incoreecte
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="datedebutev.errors?.['required'] && datedebutev.touched">
+          l'ajout de date debut d'evenement est Obligatoire
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Date fin Evenement</span>
+          <input type="text" class="form-control" name="df" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.date_fin_Event" #datefintev="ngModel" required
+            pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="datefintev.errors?.['pattern']">
+          date incoreecte
+        </div>
 
-  
 
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Description </span>
+          <input type="text" class="form-control" name="des" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" [(ngModel)]="E.description" #description="ngModel">
+        </div>
 
- 
- 
+        <div class="col-12">
+          <input class="btn btn-primary" type="submit" value="ajouter" [disabled]="f?.invalid" />
+        </div>
 
-   
-</form>
+      </form>

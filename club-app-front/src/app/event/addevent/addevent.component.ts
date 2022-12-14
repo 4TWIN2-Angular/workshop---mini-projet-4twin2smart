@@ -12,31 +12,27 @@ import { EventserviceService } from 'src/app/shared/eventservice.service';
   styleUrls: ['./addevent.component.css']
 })
 export class AddeventComponent implements OnInit {
-  
- E:evenement=new evenement();
- style1="black"
- style2="30px"
- 
 
-  constructor(private event :EventserviceService,private route:Router) { }
-  add(){
-    //let data=f.value
-    console.log(this.E)
-  }
+  E: evenement = new evenement();
+  style1 = "black"
+  style2 = "30px"
+
+
+  constructor(private event: EventserviceService, private route: Router) { }
+  // add() {
+  //   //let data=f.value
+  //   console.log(this.E)
+  // }
 
   ngOnInit(): void {
-   
+
   }
 
-ajouter(){
+ 
+  ajouter_event() {
+    this.event.ajouter_event(this.E).subscribe();
+    this.route.navigate(['/listevent']);
 
-}
-  ajouter_event(){
-   this.event.ajouter_event(this.E).subscribe();
-   this.gotoeventlist();
-    
-    }
-    gotoeventlist(){
-      this.route.navigate(['/listevent']);
-    }
+  }
+ 
 }

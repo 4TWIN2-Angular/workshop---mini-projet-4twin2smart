@@ -75,10 +75,11 @@
                 </div>
              </div>
           </div>-->
+          
        
-        <div class="col-12 mb-4">
+     <!--  <div class="col-12 mb-4">
             <div class="card shadow border-0 text-center p-0 mx-5 jarebni">
-               <div class="profile-cover rounded-top" data-background="assets/img/profile-cover.jpg"></div>
+               <div class="profile-cover rounded-top" data-background="assets/img/bg2.png"> <img src="assets/img/bg2.png" alt=""></div>
                <div class="card-body pb-5">
                   <div class="containers">
                      <img src="assets/img/images.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
@@ -105,9 +106,7 @@
                         <td> <h5 class="fw-normal" style="text-align:start">{{element.role}}</h5></td>
                      </tr>
                   </table>
-                 <!-- <h5 class="fw-normal">{{element.email}}</h5>
-                  <h4 class="fw-normal">{{element.num_M}}</h4>
-                  <h4 class="fw-normal">{{element.role}}</h4> -->
+                
                   <button class="btn btn-sm btn-secondary d-inline-flex align-items-center me-2" href="#" (click)="hideit()">
                      
                      Hide 
@@ -117,4 +116,25 @@
             </div>
          </div>
          
-         <app-mail [maile]="element.email"></app-mail>
+      -->
+     
+     <div class="card-container">
+      <span class="pro">Details</span>
+      <img class="round" src="../../../assets/img/download2.png" alt="user" />
+      <h3 style="text-transform:capitalize;">{{element.nom_M}} {{element.prenom_M}}</h3>
+      <h6 >{{element.email}}</h6>
+      <h6 >{{element.num_M}}</h6>
+      <h6 [ngStyle]="{'color':getcolor(element.role)}">{{element.role}}</h6>
+      <div class="buttons">
+        <button style="margin-top: 2rem;margin-bottom: 1rem;" class="primary"  type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Message
+        </button>
+        <button class="primary ghost" style="margin-bottom: 1rem;" (click)="hideit()">
+          Hide
+        </button>
+      </div>
+      
+    </div>
+    <app-mail [maile]="element.email"></app-mail>
+
+    

@@ -25,7 +25,7 @@ export class DeletemodalComponent implements OnInit {
     console.log(this.clubassignedto)
   }
 resetini(){
-  window.location.reload()
+this.rout.navigate(['/listmembres'])
 }
   
 constructor(private members:MembreserviceService,private rout:Router) {
@@ -48,6 +48,7 @@ constructor(private members:MembreserviceService,private rout:Router) {
  
 savemembre1(){
   this.savemembre()
+
   Swal.fire(
    
     
@@ -62,16 +63,10 @@ savemembre(){
     
  
   console.log(this.membre);
-  this.members.addmembre(this.membre,this.clubassignedto).subscribe(data=>{console.log(data),
-    this.rout.navigate(['/listmembres'])
-    
-  
-  }
-
+  this.members.addmembre(this.membre,this.clubassignedto).subscribe(data=>this.rout.navigate(['/membre/listmembres'])
   )
-  
  this.membre=new membre();
- 
+ window.location.reload()
  this.clubassignedto="";
  
 

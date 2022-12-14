@@ -43,7 +43,7 @@ return this.httpmembre.put<String>(this.membreurl+'mail',mail)
 
 }
 
-gethistory(toemail:String):Observable<Mailingcontent[]>{
+gethistory(toemail:number):Observable<Mailingcontent[]>{
   return this.httpmembre.get<Mailingcontent[]>(this.membreurl+'history'+'/'+toemail)
 }
 }

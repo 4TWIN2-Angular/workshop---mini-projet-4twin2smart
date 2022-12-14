@@ -21,7 +21,6 @@ import { AddeventComponent } from './event/addevent/addevent.component';
 import { EventupdateComponent } from './event/eventupdate/eventupdate.component';
 import { EventdeleteComponent } from './event/eventdelete/eventdelete.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { UniversityComponent } from './university/university.component';

@@ -19,4 +19,11 @@ export class DetailmembreComponent implements OnInit {
   hideit(){
     this.hidedetail.emit({State:false});
   }
+  getcolor(r:String){
+    if (r==='President')
+      return ' #88d8b0'
+      if (r==='Membre')
+      return '#2ab7ca'
+      else return '#0057e7'
+  }
 }

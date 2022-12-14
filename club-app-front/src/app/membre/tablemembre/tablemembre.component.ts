@@ -30,13 +30,7 @@ export class TablemembreComponent implements OnInit {
     
     
   }
-  getcolormembre(r :String){
-      if (r==='President')
-      return ' #88d8b0'
-      if (r==='Membre')
-      return '#2ab7ca'
-      else return '#0057e7'
-  }
+ 
   deletemembre1(id:number,i:number){
     Swal.fire({
       title: 'Are you sure?',

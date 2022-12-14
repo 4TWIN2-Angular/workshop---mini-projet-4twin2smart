@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { membre } from 'src/app/models/membre';
@@ -16,6 +16,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
   styleUrls: ['./addmembre.component.css']
 })
 export class AddmembreComponent implements OnInit {
+  @Output() s =new EventEmitter<{m:membre}>();
     rola:String;
     nom:String;
     prenom:String;
@@ -107,11 +108,19 @@ export class AddmembreComponent implements OnInit {
     } else if (result.isDenied) {
       Swal.fire('Changes are not saved', '', 'info'),
       this.membre2= new membre();
+      this.route.navigate(['/listmembres'])
+
     }
   })
   
    }
-   gethistory(){
-    this.membres.gethistory('houssembalti.de@gmail.com').subscribe(data=>console.log(data))
-   }
+    
+
+   getcolor(r:String){
+    if (r==='President')
+      return ' #88d8b0'
+      if (r==='Membre')
+      return '#2ab7ca'
+      else return '#0057e7'
+  }
 }

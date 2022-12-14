@@ -1,1 +1,25 @@
-<p>test works!</p>
+<div class="card card-body border-0 shadow mb-4 mb-xl-0">
+<caption class="d-flex">Historique des emails envoyés</caption>
+  <div class="table-responsive">
+  <table  class="table" >
+    
+
+    <thead>
+      <tr>
+        <th >Subject</th>
+        <th>Mail content</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of listmails">
+            <td class="strong">{{u.subject}}</td>
+            <td >{{u.body}}</td>
+           
+          </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
+</div>

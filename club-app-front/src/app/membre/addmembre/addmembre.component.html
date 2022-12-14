@@ -14,7 +14,7 @@
  <div class="row">
     <div class="col-12 col-xl-8">
        <div class="card card-body border-0 shadow mb-4" >
-          <h2 class="h5 mb-4 test2 col-4 "   >Modifier Coordonnées</h2>
+          <h2 class="h5 mb-4 test2 col-4 ">Modifier Coordonnées</h2>
           <form class="form-group" [formGroup]="updatemembre" (ngSubmit)="updatememb()"  >
              <div class="row">
                 <div class="col-md-6 mb-3">
@@ -127,7 +127,7 @@
               
             </div>
             <button  type="submit" class="btn btn-secondary mb-3"  [disabled]="updatemembre.invalid">Modifier</button>
-               
+
                 <!--club list-->
                   <!--modifier membre
                   <div class="col-lg-4">
@@ -160,50 +160,43 @@
           </form>
        </div>
       
-       <div class="card card-body border-0 shadow mb-4 mb-xl-0">
-         <router-outlet></router-outlet>
+       <div >
+         <router-outlet ></router-outlet>
        </div>
     </div>
     <div class="col-12 col-xl-4">
        <div class="row">
           <div class="col-12 mb-4">
-            <div class="col-12 mb-4">
-               <div class="card shadow border-0 text-center p-0">
-                  <div class="profile-cover rounded-top" data-background="assets/img/profile-cover.jpg"></div>
-                  <div class="card-body pb-5">
-                     <div class="containers">
-                        <img src="assets/img/images.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
-                        <h1 class="centered" >{{membre.prenom_M.charAt(0).toUpperCase()}}{{membre.nom_M.charAt(0).toUpperCase()}}</h1>
-                       </div>
-                       <table >
-                        <tr >
-                           <td  ><h5 class="fw-normal" style="width:100px;margin-left: 1rem;">Nom Club:</h5></td>
-                           <td style="margin-left:-2rem;"> <h4 class="fw-normal" style="text-align:start;margin-left: 1rem;">{{membre.club.nomdeclub}}</h4></td>
-                        </tr>
-                        <tr>
-                           <td><h5 class="fw-normal">Email:</h5></td>
-                           <td> <h5 class="fw-normal" style="text-align:start">{{membre.email}}</h5>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td ><h5 class="fw-normal">Num tel:</h5></td>
-                           <td><h5 class="fw-normal" style="text-align:start" >{{membre.num_M}}</h5>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td ><h5 class="fw-normal">Role:</h5></td>
-                           <td> <h4 class="fw-normal" style="text-align:start">{{membre.role}}</h4></td>
-                        </tr>
-                     </table>
                      
+                          <div class="card-container">
+                             <span class="pro">Details</span>
+                             <img class="round" src="../../../assets/img/download2.png" alt="user" />
+                             <h3 style="text-transform:capitalize;">{{membre.nom_M}} {{membre.prenom_M}}</h3>
+                             <h6 class="e9ef">{{membre.email}}</h6>
+                             <h6 class="e9ef">{{membre.num_M}}</h6>
+                             <h6 class="e9ef">{{membre.club.nomdeclub}}</h6>
+                             <h6 style="margin-top: 1rem;" [ngStyle]="{'color':getcolor(membre.role)}">{{membre.role}}</h6>
+                             
+           
+                             <div class="buttons">
+                               <button style="margin-top: 2rem;" class="primary"  type="button" style="margin-bottom: 1rem;"  routerLink="/membre/modifier/{{membre.id_M}}/tests">
+                                 Mail history
+                               </button>
+                               <button class="primary ghost"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 1rem;">
+                                sendmail
+                              </button>
+                              
+                             </div>
+                       </div>
+                    
+                    
                   </div>
                </div>
             </div>
          
          
        </div>
-    </div>
- </div>
+
  
- <hr>
- <button (click)="gethistory()">get history</button>
+ 
+       <app-mail [maile]="membre.email"></app-mail>

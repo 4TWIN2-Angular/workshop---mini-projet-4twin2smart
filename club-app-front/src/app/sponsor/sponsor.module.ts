@@ -7,11 +7,13 @@ import { SponsorRoutingModule } from './sponsor-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSponsorComponent } from './add-sponsor/add-sponsor.component';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
   declarations: [
-AddSponsorComponent
+AddSponsorComponent,
+UpdateComponent
   
   ],
   imports: [

@@ -14,6 +14,7 @@ import { university } from 'src/app/models/University';
 export class DetailsUniversityComponent implements OnInit {
 
   
+@Input() universite: University;
 
 
   UnivId: number 

@@ -33,6 +33,7 @@ listEvent: any;
       nom : new FormControl(sponsor.labelle,[Validators.required, Validators.minLength(5), Validators.pattern("[a-zA-Z]*")]),
       phone: new FormControl(sponsor.phone,[Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern("[0-9]*")]),
       categorie:new FormControl(sponsor.categorieSponsor, [Validators.required]),
+      montant:new FormControl(sponsor.montant, [Validators.required]),
       })
     
   }
@@ -44,6 +45,7 @@ save(){
   this.sponsor.labelle= this.myForm.get('nom').value;
   this.sponsor.categorieSponsor=this.myForm.get('categorie').value;
   this.sponsor.phone=this.myForm.get('phone').value;
+  this.sponsor.montant=this.myForm.get('montant').value;
   if(this.spS.addsponsor(this.sponsor).subscribe()  ){
     this.notif.success(
       'Ajout avec succés',

@@ -65,6 +65,7 @@ export class TablemembreComponent implements OnInit {
 
   }
   saveinput(momb :membre){
+    console.log(this.momb)
     this.showit=true;
       this.momb=momb;
       

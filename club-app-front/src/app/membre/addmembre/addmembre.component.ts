@@ -59,6 +59,7 @@ export class AddmembreComponent implements OnInit {
 
   }
   j(){
+   
     console.log("mi")
   
   }
@@ -123,4 +124,6 @@ export class AddmembreComponent implements OnInit {
       return '#2ab7ca'
       else return '#0057e7'
   }
+
+  
 }

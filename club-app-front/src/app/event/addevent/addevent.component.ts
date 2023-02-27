@@ -31,6 +31,7 @@ export class AddeventComponent implements OnInit {
  
   ajouter_event() {
     this.event.ajouter_event(this.E).subscribe();
+    console.log(this.E);
     this.route.navigate(['/listevent']);
 
   }

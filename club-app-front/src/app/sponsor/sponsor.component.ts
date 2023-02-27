@@ -9,11 +9,13 @@ import {style} from'./style/style'
   styleUrls: ['./sponsor.component.css']
 })
 export class SponsorComponent implements OnInit {
-  listSponsor: Sponsor[]=[]
+  listSponsor: Sponsor[];
   constructor(private spS:SponsorService,private route:Router) { }
   getAllSponsors(){
     this.spS.getallsponsor().subscribe(res=>
-      { this.listSponsor=res
+      { this.listSponsor=res;
+        console.log(this.listSponsor);
+
       });
   }
   ngOnInit(): void {

@@ -75,7 +75,7 @@
                                             <div>
                                              <div class="col-md-6 mb-3">
                                                 <label for="defaultFormControlInput" class="form-label">University name</label>
-                                                <input type="text" name="nomUniv" id="nomUniv" class="form-control" [(ngModel)]="univ.nomUniv" minlength="3" required #nomUniv="ngModel" [ngClass]="{'is-valid':(univ.nomUniv), 'is-invalid':(univ.nomUniv)}">
+                                                <input type="text" name="nomUniv" id="nomUniv" class="form-control" [(ngModel)]="univ.nomUniv" minlength="3" required #nomUniv="ngModel" [ngClass]="{'is-valid':(univ.nomUniv)}">
                                                 <div class="text-danger" *ngIf="nomUniv.invalid && nomUniv.touched">
                                                     <div *ngIf="nomUniv.hasError('required')">
                                                         field is required
@@ -91,7 +91,7 @@
                                             <div class="col-md-6 mb-3">
                                             <div>
                                              <label for="defaultFormControlInput" class="form-label">University email</label>
-                                             <input type="text" name="emailUniv" id="emailUniv" class="form-control" [(ngModel)]="univ.emailUniv"  required #emailUniv="ngModel" [ngClass]="{'is-valid':(univ.emailUniv), 'is-invalid':(univ.emailUniv)}">
+                                             <input type="text" name="emailUniv" id="emailUniv" class="form-control" [(ngModel)]="univ.emailUniv"  required #emailUniv="ngModel" [ngClass]="{'is-valid':(univ.emailUniv)}">
                                              <div class="text-danger" *ngIf="emailUniv.invalid && emailUniv.touched">
                                                  <div *ngIf="emailUniv.hasError('required')">
                                                      field is required
@@ -103,7 +103,7 @@
 
                                          <div class="col-md-6 mb-3">
                                           <div><label for="defaultFormControlInput" class="form-label">Numero de telephone</label>
-                                              <input class="form-control"   type="number" placeholder="+216 71453624 " name="phoneUniv" id="phoneUniv" minlength ="8" maxlength="8" pattern="[0-9]*" [(ngModel)]="univ.phoneUniv" required #phoneUniv="ngModel" [ngClass]="{'is-valid':(univ.phoneUniv),'is-invalid':(univ.phoneUniv)}"></div>
+                                              <input class="form-control"   type="number" placeholder="+216 71453624 " name="phoneUniv" id="phoneUniv" minlength ="8" maxlength="8" pattern="[0-9]*" [(ngModel)]="univ.phoneUniv" required #phoneUniv="ngModel" [ngClass]="{'is-valid':(univ.phoneUniv)}"></div>
                                        </div>
                                        <div *ngIf="phoneUniv.hasError('required')">
                                           field is required
@@ -121,7 +121,7 @@
                                     <div class="col-md-6 mb-3">
                                       <div>
                                        <label for="defaultFormControlInput" class="form-label">University Adress</label>
-                                       <input type="text" name="adresseUniv" id="adresseUniv" class="form-control" [(ngModel)]="univ.adresseUniv" required #adressUniv="ngModel" [ngClass]="{'is-valid':(univ.adresseUniv), 'is-invalid':(univ.adresseUniv)}">
+                                       <input type="text" name="adresseUniv" id="adresseUniv" class="form-control" [(ngModel)]="univ.adresseUniv" required #adressUniv="ngModel" [ngClass]="{'is-valid':(univ.adresseUniv)}">
                                        <div class="text-danger" *ngIf="adressUniv.invalid && adressUniv.touched">
                                            <div *ngIf="adressUniv.hasError('required')">
                                                field is required
@@ -137,7 +137,7 @@
                                     <div>
                                        <div class="col-sm-4 mb-3">
                                           <label class="my-1 me-2" for="univCategories" class="form-label">Categorie University</label> 
-                                          <select class="form-select" id="univCategories" aria-label="Default select example" [(ngModel)]="univ.univCategories" required #univCategories="ngModel" [ngClass]="{'is-valid':(univ.univCategories), 'is-invalid':(univ.univCategories)}">
+                                          <select class="form-select" id="univCategories" aria-label="Default select example" [(ngModel)]="univ.univCategories" required #univCategories="ngModel" [ngClass]="{'is-valid':(univ.univCategories)}">
                                              <option value="Etatique">Etatique</option>
                                              <option value="Privee">Privé</option>
                                           </select>
